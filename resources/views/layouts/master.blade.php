@@ -141,7 +141,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <li class="nav-item">
                             <router-link to="/dashboard" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-th  blue"></i>
                                 <p>
                                     Dashboard
                                 </p>
@@ -150,7 +150,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <li class="nav-item">
                             <router-link to="/profile" class="nav-link">
-                                <i class="nav-icon fas fa-user-alt"></i>
+                                <i class=" yellow nav-icon fas fa-user-alt"></i>
                                 <p>
                                     Profile
                                 </p>
@@ -159,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="nav-item menu-open">
                             <a href="#" class="nav-link  ">
 
-                                <i class="nav-icon fas fa-cog"></i>
+                                <i class="green nav-icon fas fa-cog"></i>
                                 <p>
                                     Management
                                     <i class="right fas fa-angle-left"></i>
@@ -167,25 +167,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Active Page</p>
-                                    </a>
+                                    <router-link to="/users" class="nav-link  ">
+                                        <i class=" cyan fas fa-users nav-icon"></i>
+                                        <p >Users</p>
+                                    </router-link>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Inactive Page</p>
-                                    </a>
-                                </li>
+                              
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-power-off"></i>
+                            <a href="#" class="nav-link " 
+                            href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="red nav-icon fas fa-power-off"></i>
                                 <p>
                                     Logout
                                 </p>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                             </a>
                         </li>
                     </ul>
@@ -205,6 +206,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="content">
                 <div class="container-fluid">
                     <router-view></router-view>
+                  <vue-progress-bar></vue-progress-bar>
+
                  </div>
             </div>
  
@@ -236,7 +239,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
- 
+
+  </div>
     <script src="/js/app.js"></script>
 </body>
 
