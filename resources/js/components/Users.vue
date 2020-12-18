@@ -42,7 +42,10 @@
                     {{ user.about }}
                   </td>
                   <td>
-                    <Button @click="editModal(user)" class="btn btn-outline-success green fa fa-edit">
+                    <Button
+                      @click="editModal(user)"
+                      class="btn btn-outline-success green fa fa-edit"
+                    >
                     </Button>
                     |
                     <Button
@@ -77,7 +80,7 @@
               aria-label="Close"
             ></button>
           </div>
-          <form @submit.prevent="editMode ? updateUser():createUser()">
+          <form @submit.prevent="editMode ? updateUser() : createUser()">
             <div class="modal-body">
               <div class="modal-body">
                 <div class="form-group">
@@ -154,8 +157,16 @@
                 >
                   Close
                 </button>
-                <button type="submit" class="btn btn-success">Update</button>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button v-show="editMode" type="submit" class="btn btn-success">
+                  Update
+                </button>
+                <button
+                  v-show="!editMode"
+                  type="submit"
+                  class="btn btn-primary"
+                >
+                  Create
+                </button>
               </div>
             </div>
           </form>
@@ -172,9 +183,10 @@
 export default {
   data() {
     return {
-      editMode :true ,
+      editMode: false,
       users: {},
       form: new Form({
+        id: "",
         name: "",
         email: "",
         password: "",
@@ -185,17 +197,36 @@ export default {
     };
   },
   methods: {
-    updateUser(){
-
+    updateUser() {
+      this.$Progress.start();
+      this.form
+        .put("api/user/" + this.form.id)
+        .then(() => {
+          Fire.$emit("AfterUserUpdated");
+          this.$Progress.finish();
+          toast.fire({
+            icon: "success",
+            title: "User Updated successfully" + this.form.id,
+          });
+           $("#addNew").modal("hide");
+        })
+        .catch(() => {
+          this.$Progress.fail();
+          toast.fire("Error!", "Operation Failed !", "error");
+            $("#addNew").modal("hide");
+        });
     },
     getUsers() {
       axios.get("api/user").then(({ data }) => (this.users = data.data));
     },
     newModal() {
+      this.editMode = false;
+
       this.form.reset();
       $("#addNew").modal("show");
     },
-     editModal(user) {
+    editModal(user) {
+      this.editMode = true;
       this.form.reset();
       $("#addNew").modal("show");
       this.form.fill(user);
@@ -218,8 +249,8 @@ export default {
               .delete("api/user/" + id)
               .then(() => {
                 Fire.$emit("AfterUserDeleted");
-                toast.fire("Deleted!", "User has been deleted.", "success");
 
+                toast.fire("Deleted!", "User has been deleted.", "success");
               })
               .catch(() => {
                 swal.fire("Error!", "Operation Failed !", "error");
@@ -256,6 +287,9 @@ export default {
       this.getUsers();
     });
     Fire.$on("AfterUserDeleted", () => {
+      this.getUsers();
+    });
+    Fire.$on("AfterUserUpdated", () => {
       this.getUsers();
     });
   },
