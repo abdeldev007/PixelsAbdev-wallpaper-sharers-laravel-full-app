@@ -6,6 +6,7 @@
 
 require('./bootstrap');
  
+
 Vue.use(VueRouter)
 window.Vue = require('vue');
 import Vue from 'vue'
@@ -45,7 +46,7 @@ const router = new VueRouter({
 })
 
 
-
+Vue.component('post', require('./components/Post.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('dashboard', require('./components/Dashboard.vue').default);
 Vue.filter('firstLettertoUpperCase', function (text) {

@@ -19,6 +19,9 @@ class CreateImagesTabel extends Migration
             $table->string('title') ;
             $table->string('tags');
             $table->string('image');
+            $table->string('category');
+
+            
             $table->timestamps();
         });
     }

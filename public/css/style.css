@@ -357,7 +357,9 @@ header.masthead .intro-text .intro-heading {
 .portfolio-modal .modal-content button {
     cursor: pointer
 }
-
+.body{
+    background-color: black;
+}
 .portfolio-modal .close-modal {
     position: absolute;
     top: 25px;
