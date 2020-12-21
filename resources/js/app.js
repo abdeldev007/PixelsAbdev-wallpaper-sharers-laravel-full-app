@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap');
-
+ 
 Vue.use(VueRouter)
 window.Vue = require('vue');
 import Vue from 'vue'
@@ -27,7 +27,7 @@ window.Fire =new Vue() ;
 
 let routes = [{
         path: '/profile',
-        component: require('./components/ExampleComponent.vue').default
+        component: require('./components/Profile.vue').default
     },
     {
         path: '/dashboard',

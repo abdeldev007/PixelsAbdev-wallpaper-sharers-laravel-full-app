@@ -18,6 +18,10 @@ class UserController extends Controller
     {
        return User::latest()->paginate(10) ;
     }
+    public function profile()
+    {
+        return auth('api')->user() ;
+    }
 
     /**
      * Store a newly created resource in storage.

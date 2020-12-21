@@ -215,7 +215,7 @@ export default {
           toast.fire("Error!", "Operation Failed !", "error");
             $("#addNew").modal("hide");
         });
-    },
+    }, 
     getUsers() {
       axios.get("api/user").then(({ data }) => (this.users = data.data));
     },
