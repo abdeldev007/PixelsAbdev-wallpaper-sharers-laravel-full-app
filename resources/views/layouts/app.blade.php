@@ -36,9 +36,8 @@
 </head>
 <body>
     <div id="app">
-     
-  <!-- ======= Header ======= -->
-  <header id="hero" >
+ 
+  <div id="hero" >
 
  <!-- .nav-menu -->
  
@@ -51,33 +50,42 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ABOUT US</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              CATEGORIES
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">CAT1</a>
+              <a class="dropdown-item" href="#">CAT2</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">CAT3</a>
             </div>
           </li>
            
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">OK</button>
         </form>
       </div>
     </nav>
-     
-  </header ><!-- End Header -->
-    <!-- SidebarSearch Form -->
+    <div class="hero-container">
+      <h1>PIXELS ABDEV</h1>
+      <h2>The world needs to see your photograph </h2>
+      <a href="#about" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
+      <button class="btn btn-outline-warning   ">BECOME A SHARER</button>
+    </div>
+  </div >
+  <!-- End Header -->
+
     
 
         <main class="py-4">
@@ -90,7 +98,7 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-  document.getElementById("navbar").style.background="black";  
+  document.getElementById("navbar").style.background="#212529";  
  } else {
  
     document.getElementById("navbar").style.background="rgba(0, 0, 0, 0)";  

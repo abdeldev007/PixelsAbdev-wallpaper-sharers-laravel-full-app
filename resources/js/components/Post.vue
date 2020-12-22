@@ -2,14 +2,9 @@
   <div class="container mt-5">
     <div class="row justify-content-center">
       <!-- Portfolio Grid-->
-      <section class="page-section bg-light" id="portfolio">
+      <section class=" " id="portfolio">
         <div class="container">
-          <div class="text-center">
-            <h2 class="section-heading text-uppercase">Latest</h2>
-            <h3 class="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
-          </div>
+         
           <div class="row">
             <div  v-for="post in posts" :key="post.id"  class="col-lg-4 col-sm-6 coloumn">
               <div class=" card portfolio-item">
@@ -44,10 +39,10 @@
             
           </div>
 
-          <!-- Modal 1-->
+   
         </div>
       </section>
- 
+        <!-- Modal 1-->
       <div
         class="modal fade"
         id="postModal"

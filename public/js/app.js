@@ -2096,11 +2096,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -64836,77 +64831,68 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container mt-5" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c(
-        "section",
-        { staticClass: "page-section bg-light", attrs: { id: "portfolio" } },
-        [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row" },
-              _vm._l(_vm.posts, function(post) {
-                return _c(
-                  "div",
-                  { key: post.id, staticClass: "col-lg-4 col-sm-6 coloumn" },
-                  [
-                    _c("div", { staticClass: " card portfolio-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "portfolio-link",
-                          attrs: { "data-toggle": "modal" },
-                          on: {
-                            click: function($event) {
-                              return _vm.newModal(post)
-                            }
+      _c("section", { staticClass: " ", attrs: { id: "portfolio" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.posts, function(post) {
+              return _c(
+                "div",
+                { key: post.id, staticClass: "col-lg-4 col-sm-6 coloumn" },
+                [
+                  _c("div", { staticClass: " card portfolio-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "portfolio-link",
+                        attrs: { "data-toggle": "modal" },
+                        on: {
+                          click: function($event) {
+                            return _vm.newModal(post)
                           }
+                        }
+                      },
+                      [
+                        _vm._m(0, true),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "img-fluid",
+                          attrs: {
+                            src: " /img/portfolio/06-thumbnail.jpg",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "portfolio-caption" }, [
+                      _c("div", { staticClass: "portfolio-caption-heading" }, [
+                        _vm._v(_vm._s(post.id))
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "portfolio-caption-subheading text-muted"
                         },
                         [
-                          _vm._m(1, true),
-                          _vm._v(" "),
-                          _c("img", {
-                            staticClass: "img-fluid",
-                            attrs: {
-                              src: " /img/portfolio/06-thumbnail.jpg",
-                              alt: ""
-                            }
-                          })
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(post.email) +
+                              "\n                "
+                          )
                         ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "portfolio-caption" }, [
-                        _c(
-                          "div",
-                          { staticClass: "portfolio-caption-heading" },
-                          [_vm._v(_vm._s(post.id))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "portfolio-caption-subheading text-muted"
-                          },
-                          [
-                            _vm._v(
-                              "\n                  " +
-                                _vm._s(post.email) +
-                                "\n                "
-                            )
-                          ]
-                        )
-                      ])
+                      )
                     ])
-                  ]
-                )
-              }),
-              0
-            )
-          ])
-        ]
-      ),
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -64922,7 +64908,7 @@ var render = function() {
         [
           _c("div", { staticClass: "modal-dialog" }, [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c("div", { staticClass: "container" }, [
                 _c("div", { staticClass: "row justify-content-center" }, [
@@ -64955,7 +64941,7 @@ var render = function() {
                         _c("li", [_vm._v("Category:  " + _vm._s(_vm.post.id))])
                       ]),
                       _vm._v(" "),
-                      _vm._m(3)
+                      _vm._m(2)
                     ])
                   ])
                 ])
@@ -64970,22 +64956,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center" }, [
-      _c("h2", { staticClass: "section-heading text-uppercase" }, [
-        _vm._v("Latest")
-      ]),
-      _vm._v(" "),
-      _c("h3", { staticClass: "section-subheading text-muted" }, [
-        _vm._v(
-          "\n            Lorem ipsum dolor sit amet consectetur.\n          "
-        )
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
