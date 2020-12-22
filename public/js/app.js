@@ -2092,6 +2092,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -64840,9 +64849,9 @@ var render = function() {
               _vm._l(_vm.posts, function(post) {
                 return _c(
                   "div",
-                  { key: post.id, staticClass: "col-lg-4 col-sm-6" },
+                  { key: post.id, staticClass: "col-lg-4 col-sm-6 coloumn" },
                   [
-                    _c("div", { staticClass: "portfolio-item" }, [
+                    _c("div", { staticClass: " card portfolio-item" }, [
                       _c(
                         "a",
                         {
@@ -64967,7 +64976,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center" }, [
       _c("h2", { staticClass: "section-heading text-uppercase" }, [
-        _vm._v("Portfolio")
+        _vm._v("Latest")
       ]),
       _vm._v(" "),
       _c("h3", { staticClass: "section-subheading text-muted" }, [
@@ -64983,7 +64992,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "portfolio-hover" }, [
       _c("div", { staticClass: "portfolio-hover-content" }, [
-        _c("i", { staticClass: "fas fa-plus fa-3x" })
+        _c("i", { staticClass: "fas fa-plus fa-3x" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" })
       ])
     ])
   },
