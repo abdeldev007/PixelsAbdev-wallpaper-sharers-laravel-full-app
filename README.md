@@ -1,6 +1,7 @@
 WALLPAPERS SHARERS : LARAVEL/VUE.JS APP 
 (THIS APP IS STILLS ON PROGRESS...)
-Home Page :Hero header front-end 
+<br>
+Home Page :Hero header front-end 12/22/2020
 
 <img src="https://raw.githubusercontent.com/abdeldev007/PixelsAbdev-wallpaper-sharers-laravel-full-app/master/public/img/home%20screenshot.PNG"/>
 Admin Pannel
