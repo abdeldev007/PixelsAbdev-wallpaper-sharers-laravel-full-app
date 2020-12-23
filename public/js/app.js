@@ -2096,6 +2096,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2117,6 +2130,9 @@ __webpack_require__.r(__webpack_exports__);
       this.post = post;
       $("#postModal").modal("show");
       this.form.fill(post);
+    },
+    hideModal: function hideModal() {
+      $("#postModal").modal("hide");
     }
   },
   created: function created() {
@@ -64841,7 +64857,7 @@ var render = function() {
                 "div",
                 { key: post.id, staticClass: "col-lg-4 col-sm-6 coloumn" },
                 [
-                  _c("div", { staticClass: " card portfolio-item" }, [
+                  _c("div", { staticClass: "card portfolio-item" }, [
                     _c(
                       "a",
                       {
@@ -64908,38 +64924,63 @@ var render = function() {
         [
           _c("div", { staticClass: "modal-dialog" }, [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(1),
+              _c("div", { staticClass: "modal-header" }, [
+                _c("div", { staticClass: "user-block" }, [
+                  _c("img", {
+                    staticClass: "img-circle img-bordered-sm",
+                    attrs: { src: "/img/profile.png", alt: "user image" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "username" }, [
+                    _c("a", { attrs: { href: "/profile/1" } }, [
+                      _vm._v("  " + _vm._s(_vm.post.name))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "description" }, [
+                    _vm._v("Shared publicly - 7:30 PM today")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-outline-danger",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        return _vm.hideModal()
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-times " })]
+                )
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "container" }, [
                 _c("div", { staticClass: "row justify-content-center" }, [
-                  _c("div", { staticClass: "col-lg-8" }, [
+                  _c("div", { staticClass: "col-lg-12" }, [
                     _c("div", { staticClass: "modal-body" }, [
                       _c("h2", { staticClass: "text-uppercase" }),
                       _vm._v(" "),
-                      _c("p", { staticClass: "item-intro text-muted" }, [
-                        _vm._v(
-                          "\n                   " +
-                            _vm._s(_vm.post.name) +
-                            "\n                  "
-                        )
-                      ]),
+                      _c("p", { staticClass: "item-intro text-muted" }),
                       _vm._v(" "),
                       _c("img", {
                         staticClass: "img-fluid d-block mx-auto",
-                        attrs: { src: " /img/portfolio/01-full.jpg", alt: "" }
+                        attrs: { src: " /img/img2.jpg", alt: "" }
                       }),
                       _vm._v(" "),
-                      _c("p", [
-                        _vm._v("\n                  dd\n                  ")
-                      ]),
+                      _c("p", [_vm._v("dd")]),
                       _vm._v(" "),
                       _c("ul", { staticClass: "list-inline" }, [
                         _c("li", [_vm._v("Date: January 2020")]),
                         _vm._v(" "),
                         _c("li", [_vm._v("Client: Threads")]),
                         _vm._v(" "),
-                        _c("li", [_vm._v("Category:  " + _vm._s(_vm.post.id))])
+                        _c("li", [_vm._v("Category: " + _vm._s(_vm.post.id))])
                       ]),
+                      _vm._v(" "),
+                      _vm._m(1),
                       _vm._v(" "),
                       _vm._m(2)
                     ])
@@ -64972,20 +65013,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c("h5", { staticClass: "modal-title", attrs: { id: "addNewLabel" } }, [
-        _vm._v("Add New")
-      ]),
-      _vm._v(" "),
-      _c("button", {
-        staticClass: "btn-close",
-        attrs: {
-          type: "button",
-          "data-bs-dismiss": "modal",
-          "aria-label": "Close"
-        }
-      })
-    ])
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-primary",
+        attrs: { "data-dismiss": "modal", type: "button" }
+      },
+      [
+        _c("i", { staticClass: "fas fa-times mr-1" }),
+        _vm._v("\n                      DOWNLOAD \n                  ")
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -64999,7 +65037,7 @@ var staticRenderFns = [
       },
       [
         _c("i", { staticClass: "fas fa-times mr-1" }),
-        _vm._v("\n                    Close Project\n                  ")
+        _vm._v("\n                      LIKE \n                  ")
       ]
     )
   }

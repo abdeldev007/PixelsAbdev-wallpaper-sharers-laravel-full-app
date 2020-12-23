@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
        // php artisan vendor:publish --tag=passport-components
-       // Passport::routes();
+          Passport::routes();
 
         //
     }
