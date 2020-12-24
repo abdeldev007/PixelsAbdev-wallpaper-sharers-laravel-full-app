@@ -10,6 +10,7 @@ require('./bootstrap');
 Vue.use(VueRouter)
 window.Vue = require('vue');
 import Vue from 'vue'
+ 
 import {
     Form,
     HasError,
@@ -19,6 +20,8 @@ import VueProgressbar from 'vue-progressbar'
 import VueRouter from 'vue-router'
 import moment from 'moment'
 import swal from 'sweetalert2'
+ 
+ 
  
  window.swal=swal ;
 window.Form = Form;
@@ -51,6 +54,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('dashboard', require('./components/Dashboard.vue').default);
 Vue.filter('firstLettertoUpperCase', function (text) {
     return text.charAt(0).toUpperCase() + text.slice(1);
+});
+Vue.filter('splitString', function (text) {
+    return text.toUpperCase().split(",") ;
 });
 Vue.filter('reformatMyDate', function (date) {
     return moment(date).format('MMM  Do / YY');

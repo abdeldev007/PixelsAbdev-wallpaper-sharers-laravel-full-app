@@ -1,7 +1,51 @@
 <template>
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <!-- Portfolio Grid-->
+  <div>
+    <section id="portfolio">
+      <div class="row">
+        <div v-for="i in cols" :key="i" class="column">
+          <div v-if="i === 1">
+            <div   v-for="post in posts.slice(0, posts.length / 3)"
+                :key="post.id" class="  portfolio-item">
+                 
+              <a
+              
+                class="portfolio-link"
+                data-toggle="modal"
+                @click="newModal(post, post.user)"
+              >
+                <img :src="post.image" />
+
+          
+              </a>
+            </div>
+          </div>
+          <div v-else-if="i === 2">
+            <img
+              v-for="post in posts.slice(
+                posts.length / 3,
+                (2 * posts.length) / 3
+              )"
+              :key="post.id"
+              :src="post.image"
+              data-toggle="modal"
+              @click="newModal(post, post.user)"
+            />
+          </div>
+          <div v-else>
+            <img
+              v-for="post in posts.slice((2 * posts.length) / 3, posts.length)"
+              :key="post.id"
+              :src="post.image"
+              @click="newModal(post, post.user)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <!-- Portfolio Grid
       <section class=" " id="portfolio">
         <div class="container">
           <div class="row">
@@ -14,7 +58,7 @@
                 <a
                   class="portfolio-link"
                   data-toggle="modal"
-                  @click="newModal(post)"
+                  @click="newModal(post,post.user)"
                 >
                   <div class="portfolio-hover">
                     <div class="portfolio-hover-content">
@@ -29,7 +73,7 @@
                   />
                 </a>
                 <div class="portfolio-caption">
-                  <div class="portfolio-caption-heading">{{ post.id }}</div>
+                  <div class="portfolio-caption-heading">{{ post.title }}</div>
                   <div class="portfolio-caption-subheading text-muted">
                     {{ post.email }}
                   </div>
@@ -38,72 +82,82 @@
             </div>
           </div>
         </div>
-      </section>
-      <!-- Modal 1-->
-      <div
-        class="modal fade"
-        id="postModal"
-        tabindex="-1"
-        role="dialog"
-        aria-hidden="false"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <div class="user-block">
-                <img
-                  class="img-circle img-bordered-sm"
-                  src="/img/profile.png"
-                  alt="user image"
-                />
-                <span class="username">
-                  <a href="/profile/1">  {{ post.name }}</a>
-                  
-                </span>
-                <span class="description">Shared publicly - 7:30 PM today</span>
+      </section>-->
+        <!-- Modal 1-->
+        <div
+          class="modal fade"
+          id="postModal"
+          tabindex="-1"
+          role="dialog"
+          aria-hidden="false"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="user-block">
+                  <img
+                    class="img-circle img-bordered-sm"
+                    src="/img/profile.png"
+                    alt="user image"
+                  />
+                  <span class="username">
+                    <a href="/profile/1"> {{ user.name }}</a>
+                  </span>
+                  <span class="description"
+                    >Shared publicly - 7:30 PM today</span
+                  >
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-outline-danger"
+                  @click="hideModal()"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
               </div>
-              <button
-                type="button"
-                class="btn btn-outline-danger"
-                @click="hideModal()"
-              > <i class="fas fa-times "></i></button>
-            </div>
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-12">
-                  <div class="modal-body">
-                    <!-- Project Details Go Here-->
-                    <h2 class="text-uppercase"></h2>
-                    <p class="item-intro text-muted">
-                    
-                    </p>
-                    <img
-                      class="img-fluid d-block mx-auto"
-                      src=" /img/img2.jpg"
-                      alt=""
-                    />
-                    <p>dd</p>
-                    <ul class="list-inline">
-                      <li>Date: January 2020</li>
-                      <li>Client: Threads</li>
-                      <li>Category: {{ post.id }}</li>
-                    </ul>
-                    <button
-                      class="btn btn-primary"
-                      data-dismiss="modal"
-                      type="button"
-                    >
-                      <i class="fas fa-times mr-1"></i>
-                        DOWNLOAD 
-                    </button>
-                       <button
-                      class="btn btn-primary"
-                      data-dismiss="modal"
-                      type="button"
-                    >
-                      <i class="fas fa-times mr-1"></i>
-                        LIKE 
-                    </button>
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-12">
+                    <div class="modal-body">
+                      <!-- Project Details Go Here-->
+                      <h2 class="text-uppercase"></h2>
+                      <p class="item-intro text-muted"></p>
+                      <img
+                        class="img-fluid d-block mx-auto"
+                        src=" /img/img2.jpg"
+                        alt=""
+                      />
+                      <p>dd</p>
+                      <ul class="list-inline">
+                        <li>tags:</li>
+                        <a
+                          v-for="tag in splitStr(post.tags)"
+                          :key="tag"
+                          href="#"
+                        >
+                          <span class="btn btn-xs bg-maroon"> {{ tag }}</span>
+                          <i> </i>
+                        </a>
+
+                        <li>Category: {{ post.category }}</li>
+                      </ul>
+                      <button
+                        class="btn btn-primary"
+                        data-dismiss="modal"
+                        type="button"
+                      >
+                        <i class="fas fa-times mr-1"></i>
+                        DOWNLOAD
+                      </button>
+                      <button
+                        class="btn btn-primary"
+                        data-dismiss="modal"
+                        type="button"
+                      >
+                        <i class="fas fa-times mr-1"></i>
+                        LIKE
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -111,8 +165,8 @@
           </div>
         </div>
       </div>
+      <link href="css/style.css" rel="stylesheet" />
     </div>
-    <link href="css/style.css" rel="stylesheet" />
   </div>
 </template>
 
@@ -120,32 +174,33 @@
 export default {
   data() {
     return {
+      index: 0,
       editMode: false,
-      posts: {},
-
+      posts: [],
+      cols: [1, 2, 3],
+      i: 1,
       post: {
-        id: "",
-        name: "",
-        email: "",
-        password: "",
-        about: "",
-        image: "",
-        role: "",
+        tags: "",
       },
+      user: {},
+      str: "",
     };
   },
   methods: {
-    newModal(post) {
+    newModal(post, user) {
+      this.user = user;
       this.post = post;
       $("#postModal").modal("show");
-      this.form.fill(post);
+    },
+    splitStr(str) {
+      return str.split(",");
     },
     hideModal() {
       $("#postModal").modal("hide");
     },
   },
   created() {
-    axios.get("api/user").then(({ data }) => (this.posts = data.data));
+    axios.get("api/post").then(({ data }) => (this.posts = data.data));
   },
 };
 </script>

@@ -2109,27 +2109,83 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      index: 0,
       editMode: false,
-      posts: {},
+      posts: [],
+      cols: [1, 2, 3],
+      i: 1,
       post: {
-        id: "",
-        name: "",
-        email: "",
-        password: "",
-        about: "",
-        image: "",
-        role: ""
-      }
+        tags: ""
+      },
+      user: {},
+      str: ""
     };
   },
   methods: {
-    newModal: function newModal(post) {
+    newModal: function newModal(post, user) {
+      this.user = user;
       this.post = post;
       $("#postModal").modal("show");
-      this.form.fill(post);
+    },
+    splitStr: function splitStr(str) {
+      return str.split(",");
     },
     hideModal: function hideModal() {
       $("#postModal").modal("hide");
@@ -2138,7 +2194,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get("api/user").then(function (_ref) {
+    axios.get("api/post").then(function (_ref) {
       var data = _ref.data;
       return _this.posts = data.data;
     });
@@ -64845,170 +64901,201 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container mt-5" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("section", { staticClass: " ", attrs: { id: "portfolio" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.posts, function(post) {
-              return _c(
-                "div",
-                { key: post.id, staticClass: "col-lg-4 col-sm-6 coloumn" },
-                [
-                  _c("div", { staticClass: "card portfolio-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "portfolio-link",
-                        attrs: { "data-toggle": "modal" },
-                        on: {
-                          click: function($event) {
-                            return _vm.newModal(post)
-                          }
-                        }
-                      },
-                      [
-                        _vm._m(0, true),
-                        _vm._v(" "),
-                        _c("img", {
-                          staticClass: "img-fluid",
-                          attrs: {
-                            src: " /img/portfolio/06-thumbnail.jpg",
-                            alt: ""
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "portfolio-caption" }, [
-                      _c("div", { staticClass: "portfolio-caption-heading" }, [
-                        _vm._v(_vm._s(post.id))
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "portfolio-caption-subheading text-muted"
-                        },
-                        [
-                          _vm._v(
-                            "\n                  " +
-                              _vm._s(post.email) +
-                              "\n                "
-                          )
-                        ]
-                      )
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
-      _vm._v(" "),
+  return _c("div", [
+    _c("section", { attrs: { id: "portfolio" } }, [
       _c(
         "div",
-        {
-          staticClass: "modal fade",
-          attrs: {
-            id: "postModal",
-            tabindex: "-1",
-            role: "dialog",
-            "aria-hidden": "false"
-          }
-        },
-        [
-          _c("div", { staticClass: "modal-dialog" }, [
-            _c("div", { staticClass: "modal-content" }, [
-              _c("div", { staticClass: "modal-header" }, [
-                _c("div", { staticClass: "user-block" }, [
-                  _c("img", {
-                    staticClass: "img-circle img-bordered-sm",
-                    attrs: { src: "/img/profile.png", alt: "user image" }
+        { staticClass: "row" },
+        _vm._l(_vm.cols, function(i) {
+          return _c("div", { key: i, staticClass: "column" }, [
+            i === 1
+              ? _c(
+                  "div",
+                  _vm._l(_vm.posts.slice(0, _vm.posts.length / 3), function(
+                    post
+                  ) {
+                    return _c(
+                      "div",
+                      { key: post.id, staticClass: "  portfolio-item" },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "portfolio-link",
+                            attrs: { "data-toggle": "modal" },
+                            on: {
+                              click: function($event) {
+                                return _vm.newModal(post, post.user)
+                              }
+                            }
+                          },
+                          [_c("img", { attrs: { src: post.image } })]
+                        )
+                      ]
+                    )
                   }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "username" }, [
-                    _c("a", { attrs: { href: "/profile/1" } }, [
-                      _vm._v("  " + _vm._s(_vm.post.name))
+                  0
+                )
+              : i === 2
+              ? _c(
+                  "div",
+                  _vm._l(
+                    _vm.posts.slice(
+                      _vm.posts.length / 3,
+                      (2 * _vm.posts.length) / 3
+                    ),
+                    function(post) {
+                      return _c("img", {
+                        key: post.id,
+                        attrs: { src: post.image, "data-toggle": "modal" },
+                        on: {
+                          click: function($event) {
+                            return _vm.newModal(post, post.user)
+                          }
+                        }
+                      })
+                    }
+                  ),
+                  0
+                )
+              : _c(
+                  "div",
+                  _vm._l(
+                    _vm.posts.slice(
+                      (2 * _vm.posts.length) / 3,
+                      _vm.posts.length
+                    ),
+                    function(post) {
+                      return _c("img", {
+                        key: post.id,
+                        attrs: { src: post.image },
+                        on: {
+                          click: function($event) {
+                            return _vm.newModal(post, post.user)
+                          }
+                        }
+                      })
+                    }
+                  ),
+                  0
+                )
+          ])
+        }),
+        0
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "container mt-5" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c(
+          "div",
+          {
+            staticClass: "modal fade",
+            attrs: {
+              id: "postModal",
+              tabindex: "-1",
+              role: "dialog",
+              "aria-hidden": "false"
+            }
+          },
+          [
+            _c("div", { staticClass: "modal-dialog" }, [
+              _c("div", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c("div", { staticClass: "user-block" }, [
+                    _c("img", {
+                      staticClass: "img-circle img-bordered-sm",
+                      attrs: { src: "/img/profile.png", alt: "user image" }
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "username" }, [
+                      _c("a", { attrs: { href: "/profile/1" } }, [
+                        _vm._v(" " + _vm._s(_vm.user.name))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "description" }, [
+                      _vm._v("Shared publicly - 7:30 PM today")
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("span", { staticClass: "description" }, [
-                    _vm._v("Shared publicly - 7:30 PM today")
-                  ])
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-outline-danger",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.hideModal()
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-times" })]
+                  )
                 ]),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-danger",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function($event) {
-                        return _vm.hideModal()
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fas fa-times " })]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "container" }, [
-                _c("div", { staticClass: "row justify-content-center" }, [
-                  _c("div", { staticClass: "col-lg-12" }, [
-                    _c("div", { staticClass: "modal-body" }, [
-                      _c("h2", { staticClass: "text-uppercase" }),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "item-intro text-muted" }),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "img-fluid d-block mx-auto",
-                        attrs: { src: " /img/img2.jpg", alt: "" }
-                      }),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("dd")]),
-                      _vm._v(" "),
-                      _c("ul", { staticClass: "list-inline" }, [
-                        _c("li", [_vm._v("Date: January 2020")]),
+                _c("div", { staticClass: "container" }, [
+                  _c("div", { staticClass: "row justify-content-center" }, [
+                    _c("div", { staticClass: "col-lg-12" }, [
+                      _c("div", { staticClass: "modal-body" }, [
+                        _c("h2", { staticClass: "text-uppercase" }),
                         _vm._v(" "),
-                        _c("li", [_vm._v("Client: Threads")]),
+                        _c("p", { staticClass: "item-intro text-muted" }),
                         _vm._v(" "),
-                        _c("li", [_vm._v("Category: " + _vm._s(_vm.post.id))])
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(1),
-                      _vm._v(" "),
-                      _vm._m(2)
+                        _c("img", {
+                          staticClass: "img-fluid d-block mx-auto",
+                          attrs: { src: " /img/img2.jpg", alt: "" }
+                        }),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("dd")]),
+                        _vm._v(" "),
+                        _c(
+                          "ul",
+                          { staticClass: "list-inline" },
+                          [
+                            _c("li", [_vm._v("tags:")]),
+                            _vm._v(" "),
+                            _vm._l(_vm.splitStr(_vm.post.tags), function(tag) {
+                              return _c(
+                                "a",
+                                { key: tag, attrs: { href: "#" } },
+                                [
+                                  _c(
+                                    "span",
+                                    { staticClass: "btn btn-xs bg-maroon" },
+                                    [_vm._v(" " + _vm._s(tag))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("i")
+                                ]
+                              )
+                            }),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("Category: " + _vm._s(_vm.post.category))
+                            ])
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _vm._m(1)
+                      ])
                     ])
                   ])
                 ])
               ])
             ])
-          ])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("link", { attrs: { href: "css/style.css", rel: "stylesheet" } })
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("link", { attrs: { href: "css/style.css", rel: "stylesheet" } })
+    ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "portfolio-hover" }, [
-      _c("div", { staticClass: "portfolio-hover-content" }, [
-        _c("i", { staticClass: "fas fa-plus fa-3x" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" })
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -65021,7 +65108,7 @@ var staticRenderFns = [
       },
       [
         _c("i", { staticClass: "fas fa-times mr-1" }),
-        _vm._v("\n                      DOWNLOAD \n                  ")
+        _vm._v("\n                      DOWNLOAD\n                    ")
       ]
     )
   },
@@ -65037,7 +65124,7 @@ var staticRenderFns = [
       },
       [
         _c("i", { staticClass: "fas fa-times mr-1" }),
-        _vm._v("\n                      LIKE \n                  ")
+        _vm._v("\n                      LIKE\n                    ")
       ]
     )
   }
@@ -81579,6 +81666,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example-component', __webp
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('dashboard', __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('firstLettertoUpperCase', function (text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
+});
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('splitString', function (text) {
+  return text.toUpperCase().split(",");
 });
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('reformatMyDate', function (date) {
   return moment__WEBPACK_IMPORTED_MODULE_4___default()(date).format('MMM  Do / YY');

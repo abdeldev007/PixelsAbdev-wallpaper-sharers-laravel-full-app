@@ -7,7 +7,7 @@ use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\Post;
 use Validator;
 use App\Http\Resources\Post as PostResource;
-   
+use Illuminate\Support\Facades\Auth;
 class PostsController extends BaseController
 {
     /**
@@ -17,9 +17,9 @@ class PostsController extends BaseController
      */
     public function index()
     {
-        $Posts = Post::all();
-    
-        return $this->sendResponse(PostResource::collection($Posts), 'Posts retrieved successfully.');
+         
+       
+       return  $this->sendResponse(PostResource::collection(Post::with('user')->get()), 'Posts retrieved successfully.');
     }
     /**
      * Store a newly created resource in storage.
@@ -29,6 +29,7 @@ class PostsController extends BaseController
      */
     public function store(Request $request)
     {
+        
         $input = $request->all();
    
         $validator = Validator::make($input, [
@@ -96,10 +97,17 @@ class PostsController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $Post)
+    public function destroy()
     {
-        $Post->delete();
+    
+    Post::all()->delete();
    
         return $this->sendResponse([], 'Post deleted successfully.');
+    }
+    public function authUser()
+    {
+       return Auth::user();
+   
+        
     }
 }
