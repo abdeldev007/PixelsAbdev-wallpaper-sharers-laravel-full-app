@@ -4,40 +4,53 @@
       <div class="row">
         <div v-for="i in cols" :key="i" class="column">
           <div v-if="i === 1">
-            <div   v-for="post in posts.slice(0, posts.length / 3)"
-                :key="post.id" class="  portfolio-item">
-                 
+            <div
+              v-for="post in posts.slice(0, posts.length / 3)"
+              :key="post.id"
+             
+            >
               <a
-              
-                class="portfolio-link"
+                href=""
                 data-toggle="modal"
                 @click="newModal(post, post.user)"
               >
                 <img :src="post.image" />
-
-          
               </a>
             </div>
           </div>
           <div v-else-if="i === 2">
-            <img
+            <div
               v-for="post in posts.slice(
                 posts.length / 3,
                 (2 * posts.length) / 3
               )"
               :key="post.id"
-              :src="post.image"
-              data-toggle="modal"
-              @click="newModal(post, post.user)"
-            />
+              
+              
+             >
+               <a
+                href=""
+                data-toggle="modal"
+                @click="newModal(post, post.user)"
+              >
+                <img :src="post.image" />
+              </a>
+            </div>
           </div>
           <div v-else>
-            <img
+            <div
               v-for="post in posts.slice((2 * posts.length) / 3, posts.length)"
               :key="post.id"
-              :src="post.image"
-              @click="newModal(post, post.user)"
-            />
+            
+             >
+               <a
+                href=""
+                data-toggle="modal"
+                @click="newModal(post, post.user)"
+              >
+                <img :src="post.image" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

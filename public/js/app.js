@@ -2163,6 +2163,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -64914,25 +64927,20 @@ var render = function() {
                   _vm._l(_vm.posts.slice(0, _vm.posts.length / 3), function(
                     post
                   ) {
-                    return _c(
-                      "div",
-                      { key: post.id, staticClass: "  portfolio-item" },
-                      [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "portfolio-link",
-                            attrs: { "data-toggle": "modal" },
-                            on: {
-                              click: function($event) {
-                                return _vm.newModal(post, post.user)
-                              }
+                    return _c("div", { key: post.id }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "", "data-toggle": "modal" },
+                          on: {
+                            click: function($event) {
+                              return _vm.newModal(post, post.user)
                             }
-                          },
-                          [_c("img", { attrs: { src: post.image } })]
-                        )
-                      ]
-                    )
+                          }
+                        },
+                        [_c("img", { attrs: { src: post.image } })]
+                      )
+                    ])
                   }),
                   0
                 )
@@ -64945,15 +64953,20 @@ var render = function() {
                       (2 * _vm.posts.length) / 3
                     ),
                     function(post) {
-                      return _c("img", {
-                        key: post.id,
-                        attrs: { src: post.image, "data-toggle": "modal" },
-                        on: {
-                          click: function($event) {
-                            return _vm.newModal(post, post.user)
-                          }
-                        }
-                      })
+                      return _c("div", { key: post.id }, [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "", "data-toggle": "modal" },
+                            on: {
+                              click: function($event) {
+                                return _vm.newModal(post, post.user)
+                              }
+                            }
+                          },
+                          [_c("img", { attrs: { src: post.image } })]
+                        )
+                      ])
                     }
                   ),
                   0
@@ -64966,15 +64979,20 @@ var render = function() {
                       _vm.posts.length
                     ),
                     function(post) {
-                      return _c("img", {
-                        key: post.id,
-                        attrs: { src: post.image },
-                        on: {
-                          click: function($event) {
-                            return _vm.newModal(post, post.user)
-                          }
-                        }
-                      })
+                      return _c("div", { key: post.id }, [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "", "data-toggle": "modal" },
+                            on: {
+                              click: function($event) {
+                                return _vm.newModal(post, post.user)
+                              }
+                            }
+                          },
+                          [_c("img", { attrs: { src: post.image } })]
+                        )
+                      ])
                     }
                   ),
                   0
