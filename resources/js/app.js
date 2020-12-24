@@ -50,7 +50,7 @@ const router = new VueRouter({
 
 
 Vue.component('post', require('./components/Post.vue').default);
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('image-clicked-modal', require('./components/ImageClickedModal.vue').default);
 Vue.component('dashboard', require('./components/Dashboard.vue').default);
 Vue.filter('firstLettertoUpperCase', function (text) {
     return text.charAt(0).toUpperCase() + text.slice(1);

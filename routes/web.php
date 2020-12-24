@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/create', function () {
+    return view('login');
+});
+
 Auth::routes();
 Route::get('/api',  function(){
     return view('vendor/passport/authorize');

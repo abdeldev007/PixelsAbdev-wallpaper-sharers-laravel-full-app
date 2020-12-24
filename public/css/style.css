@@ -856,7 +856,7 @@ header.masthead .intro-text .intro-heading {
     box-sizing: border-box;
   }
   
-   
+  /*POSTS CSS*/
   
   .row {
     display: -ms-flexbox; /* IE10 */
@@ -897,3 +897,50 @@ header.masthead .intro-text .intro-heading {
       max-width: 100%;
     }
   }
+
+
+  .post-container {
+    position: relative;
+     padding: 0%;
+  }
+ 
+
+.post-hover-banner {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  
+  width: 100%;
+   background-color: #070b0f2a;
+}
+
+ 
+.post-container:hover .post-hover-banner {
+  opacity: 1;
+  display: inline-block;
+
+}
+.post-container .post-hover-banner  img{
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+}
+.post-container .post-hover-banner button{
+  margin-top:17px ;
+  margin-left:2px;
+  margin-right:2px;
+}
+.post-container .post-hover-banner  h5{
+  margin: 20px;
+  color: white;
+  text-align: start;
+ }
+ .direct-chat-text{
+   margin-left :-10px;
+   margin-right :0px;
+   margin-top :20px;
+   
+ }
+  /*END POSTS CSS*/

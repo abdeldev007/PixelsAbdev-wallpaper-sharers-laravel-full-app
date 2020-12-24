@@ -5,57 +5,129 @@
         <div v-for="i in cols" :key="i" class="column">
           <div v-if="i === 1">
             <div
+              class="post-container"
               v-for="post in posts.slice(0, posts.length / 3)"
               :key="post.id"
-             
             >
-              <a
-                href=""
-                data-toggle="modal"
-                @click="newModal(post, post.user)"
-              >
+              <div class="post-hover-banner">
+                <div class="row">
+                     <div class="col-2">
+                    <img
+                      class="img-circle img-bordered-sm"
+                      :src="post.image"
+                      alt="user image"
+                    />
+                 </div>
+                   <div class="col-7">
+                 <div class="direct-chat-text">
+                   {{post.user.name}}
+                  </div>
+                  </div>
+                  
+                   <div class="col-1">
+                   <button  @click="onDownload(post)" class="btn btn-outline-warning  ">
+                  <i class="fas fa-download"> </i>   
+                  </button> 
+                  </div>
+                   <div class="col-2" >
+                   <button class="btn btn-outline-warning  ">
+                  <i class="fas fa-thumbs-up"> </i>   
+                  </button> 
+                  
+                  </div>
+               
+                </div>
+              </div>
+              <a href="" data-toggle="modal" @click="newModal(post, post.user)">
                 <img :src="post.image" />
               </a>
             </div>
           </div>
           <div v-else-if="i === 2">
             <div
+              class="post-container"
               v-for="post in posts.slice(
                 posts.length / 3,
                 (2 * posts.length) / 3
               )"
               :key="post.id"
-              
-              
-             >
-               <a
-                href=""
-                data-toggle="modal"
-                @click="newModal(post, post.user)"
-              >
+            >
+                  <div class="post-hover-banner">
+                <div class="row">
+                     <div class="col-2">
+                    <img
+                      class="img-circle img-bordered-sm"
+                      :src="post.image"
+                      alt="user image"
+                    />
+                 </div>
+                   <div class="col-7">
+                 <div class="direct-chat-text">
+                   {{post.user.name}}
+                  </div>
+                  </div>
+                  
+                   <div class="col-1">
+                   <button class="btn btn-outline-warning  ">
+                  <i class="fas fa-download"> </i>   
+                  </button> 
+                  </div>
+                   <div class="col-2" >
+                   <button class="btn btn-outline-warning  ">
+                  <i class="fas fa-thumbs-up"> </i>   
+                  </button> 
+                  
+                  </div>
+               
+                </div>
+              </div>
+              <a href="" data-toggle="modal" @click="newModal(post, post.user)">
                 <img :src="post.image" />
               </a>
             </div>
           </div>
           <div v-else>
             <div
+              class="post-container"
               v-for="post in posts.slice((2 * posts.length) / 3, posts.length)"
               :key="post.id"
-            
-             >
-               <a
-                href=""
-                data-toggle="modal"
-                @click="newModal(post, post.user)"
-              >
+            >
+                   <div class="post-hover-banner">
+                <div class="row">
+                     <div class="col-2">
+                    <img
+                      class="img-circle img-bordered-sm"
+                      :src="post.image"
+                      alt="user image"
+                    />
+                 </div>
+                   <div class="col-7">
+                 <div class="direct-chat-text">
+                   {{post.user.name}}
+                  </div>
+                  </div>
+
+                   <div class="col-1">
+                   <button class="btn btn-outline-warning  ">
+                  <i class="fas fa-download"> </i>   
+                  </button> 
+                  </div>
+                   <div class="col-2" >
+                   <button class="btn btn-outline-warning  ">
+                  <i class="fas fa-thumbs-up"> </i>   
+                  </button> 
+                  </div>
+                </div>
+              </div>
+              <a href="" data-toggle="modal" @click="newModal(post, post.user)">
                 <img :src="post.image" />
               </a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
+    </section>  
+<image-clicked-modal :post= " this.post "  :user= " this.user " ></image-clicked-modal>
     <div class="container mt-5">
       <div class="row justify-content-center">
         <!-- Portfolio Grid
@@ -96,87 +168,7 @@
           </div>
         </div>
       </section>-->
-        <!-- Modal 1-->
-        <div
-          class="modal fade"
-          id="postModal"
-          tabindex="-1"
-          role="dialog"
-          aria-hidden="false"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <div class="user-block">
-                  <img
-                    class="img-circle img-bordered-sm"
-                    src="/img/profile.png"
-                    alt="user image"
-                  />
-                  <span class="username">
-                    <a href="/profile/1"> {{ user.name }}</a>
-                  </span>
-                  <span class="description"
-                    >Shared publicly - 7:30 PM today</span
-                  >
-                </div>
-                <button
-                  type="button"
-                  class="btn btn-outline-danger"
-                  @click="hideModal()"
-                >
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div class="container">
-                <div class="row justify-content-center">
-                  <div class="col-lg-12">
-                    <div class="modal-body">
-                      <!-- Project Details Go Here-->
-                      <h2 class="text-uppercase"></h2>
-                      <p class="item-intro text-muted"></p>
-                      <img
-                        class="img-fluid d-block mx-auto"
-                        src=" /img/img2.jpg"
-                        alt=""
-                      />
-                      <p>dd</p>
-                      <ul class="list-inline">
-                        <li>tags:</li>
-                        <a
-                          v-for="tag in splitStr(post.tags)"
-                          :key="tag"
-                          href="#"
-                        >
-                          <span class="btn btn-xs bg-maroon"> {{ tag }}</span>
-                          <i> </i>
-                        </a>
-
-                        <li>Category: {{ post.category }}</li>
-                      </ul>
-                      <button
-                        class="btn btn-primary"
-                        data-dismiss="modal"
-                        type="button"
-                      >
-                        <i class="fas fa-times mr-1"></i>
-                        DOWNLOAD
-                      </button>
-                      <button
-                        class="btn btn-primary"
-                        data-dismiss="modal"
-                        type="button"
-                      >
-                        <i class="fas fa-times mr-1"></i>
-                        LIKE
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+   
       </div>
       <link href="css/style.css" rel="stylesheet" />
     </div>
@@ -184,7 +176,9 @@
 </template>
 
 <script>
+import ImageClickedModal from './ImageClickedModal.vue';
 export default {
+  components: { ImageClickedModal },
   data() {
     return {
       index: 0,
@@ -200,6 +194,25 @@ export default {
     };
   },
   methods: {
+     onDownload(post) {
+              axios({
+                    url: post.image,
+                    method: 'GET',
+                    responseType: 'blob',
+                }).then((response) => {
+                     var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                     var fileLink = document.createElement('a');
+
+                     fileLink.href = fileURL;
+                     fileLink.setAttribute('download', post.title+'.jpg');
+                     document.body.appendChild(fileLink);
+
+                     fileLink.click();
+                       console.log(post.image);
+                }).catch(()=>{
+                    console.log("error" );
+                });
+          },
     newModal(post, user) {
       this.user = user;
       this.post = post;
