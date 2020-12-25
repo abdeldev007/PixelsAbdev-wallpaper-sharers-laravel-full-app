@@ -12,16 +12,22 @@
               <div class="post-hover-banner">
                 <div class="row">
                      <div class="col-2">
-                    <img
+                     <a  :href="'/profile/'+post.user.id">
+                        <img 
                       class="img-circle img-bordered-sm"
                       :src="post.image"
                       alt="user image"
                     />
+                     </a>
+                   
                  </div>
                    <div class="col-6">
+                      
                  <div class="direct-chat-text">
-                   {{post.user.name}}
+          <a  :href="'/profile/'+post.user.id">   {{post.user.name}} </a>
+
                   </div>
+                    
                   </div>
                   
                    <div class="col-1 m-1">
@@ -31,9 +37,9 @@
                   </div>
                    
                    <div class="col-1 m-1" >
-                   <a class="btn btn-outline-warning  ">
+                 <button @click="likeButtonClicked" class="btn btn-outline-warning  ">
                   <i class="fas fa-thumbs-up"> </i>   
-                  </a> 
+                  </button> 
                   
                   </div>
                
@@ -56,15 +62,19 @@
                   <div class="post-hover-banner">
                 <div class="row">
                      <div class="col-2">
+                        <a  :href="'/profile/'+post.user.id">
                     <img
                       class="img-circle img-bordered-sm"
                       :src="post.image"
                       alt="user image"
                     />
+                        </a>
                  </div>
                    <div class="col-6">
+                     
                  <div class="direct-chat-text">
-                   {{post.user.name}}
+                             <a  :href="'/profile/'+post.user.id">   {{post.user.name}} </a>
+
                   </div>
                   </div>
                     
@@ -75,9 +85,9 @@
                   </div>
                    
                    <div class="col-1 m-1" >
-                   <a class="btn btn-outline-warning  ">
+                   <button @click="likeButtonClicked" class="btn btn-outline-warning  ">
                   <i class="fas fa-thumbs-up"> </i>   
-                  </a> 
+                  </button> 
                   
                   </div>
                 </div>
@@ -104,7 +114,8 @@
                  </div>
                    <div class="col-6">
                  <div class="direct-chat-text">
-                   {{post.user.name}}
+               <a  :href="'/profile/'+post.user.id">   {{post.user.name}} </a>
+
                   </div>
                   </div>
    
@@ -115,9 +126,9 @@
                   </div>
                    
                    <div class="col-1 m-1" >
-                   <a class="btn btn-outline-warning  ">
+                                <button @click="likeButtonClicked" class="btn btn-outline-warning  ">
                   <i class="fas fa-thumbs-up"> </i>   
-                  </a> 
+                  </button> 
                   
                   </div>
                 </div>
@@ -131,6 +142,7 @@
       </div>
     </section>  
 <image-clicked-modal :post= " this.post "  :user= " this.user " ></image-clicked-modal>
+<create-account-modal></create-account-modal>
     <div class="container mt-5">
       <div class="row justify-content-center">
         <!-- Portfolio Grid
@@ -179,9 +191,10 @@
 </template>
 
 <script>
+import CreateAccountModal from './CreateAccountModal.vue';
 import ImageClickedModal from './ImageClickedModal.vue';
 export default {
-  components: { ImageClickedModal },
+  components: { ImageClickedModal, CreateAccountModal },
   data() {
     return {
       index: 0,
@@ -220,6 +233,10 @@ export default {
       this.user = user;
       this.post = post;
       $("#postModal").modal("show");
+    },
+    likeButtonClicked( ) {
+    
+      $("#createAccountModal").modal("show");
     },
     splitStr(str) {
       return str.split(",");

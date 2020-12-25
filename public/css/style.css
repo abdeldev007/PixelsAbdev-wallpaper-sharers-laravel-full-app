@@ -927,7 +927,7 @@ header.masthead .intro-text .intro-heading {
   height: 50px;
   width: 50px;
 }
-.post-container .post-hover-banner a{
+.post-container .post-hover-banner button,.post-container .post-hover-banner a{
   margin-top:15px ;
   margin-left:2px;
   margin-right:2px;
@@ -942,5 +942,10 @@ header.masthead .intro-text .intro-heading {
    margin-right :0px;
    margin-top :20px;
    
+ }
+ #portfolio .btn ,#hero .btn{
+   border-radius: 100px;
+   
+   border:solid 2px #eef0f2;
  }
   /*END POSTS CSS*/

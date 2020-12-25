@@ -1916,6 +1916,88 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateAccountModal.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CreateAccountModal.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    splitStr: function splitStr(str) {
+      return str.split(",");
+    },
+    hideModal: function hideModal() {
+      $("#createAccountModal").modal("hide");
+    }
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard.vue?vue&type=script&lang=js& ***!
@@ -2063,7 +2145,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ImageClickedModal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ImageClickedModal.vue */ "./resources/js/components/ImageClickedModal.vue");
+/* harmony import */ var _CreateAccountModal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateAccountModal.vue */ "./resources/js/components/CreateAccountModal.vue");
+/* harmony import */ var _ImageClickedModal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ImageClickedModal.vue */ "./resources/js/components/ImageClickedModal.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2245,9 +2340,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    ImageClickedModal: _ImageClickedModal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    ImageClickedModal: _ImageClickedModal_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    CreateAccountModal: _CreateAccountModal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
@@ -2285,6 +2382,9 @@ __webpack_require__.r(__webpack_exports__);
       this.user = user;
       this.post = post;
       $("#postModal").modal("show");
+    },
+    likeButtonClicked: function likeButtonClicked() {
+      $("#createAccountModal").modal("show");
     },
     splitStr: function splitStr(str) {
       return str.split(",");
@@ -64896,6 +64996,114 @@ AlertSuccess_component.options.__file = "AlertSuccess.vue"
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateAccountModal.vue?vue&type=template&id=5873eb47&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CreateAccountModal.vue?vue&type=template&id=5873eb47& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "modal fade",
+      attrs: {
+        id: "createAccountModal",
+        tabindex: "-1",
+        role: "dialog",
+        "aria-hidden": "false"
+      }
+    },
+    [
+      _c("div", { staticClass: "modal-dialog" }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _c("div", { staticClass: "modal-header" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-outline-danger",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.hideModal()
+                  }
+                }
+              },
+              [_c("i", { staticClass: "fas fa-times" })]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(3)
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "user-block" }, [
+      _c("img", {
+        staticClass: "img-circle img-bordered-sm",
+        attrs: { src: "/img/profile.png", alt: "user image" }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "username" }, [_c("a", [_vm._v(" Register ")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "btn btn-outline-primary  " }, [
+      _c("i", { staticClass: "fas fa-thumbs-up" }),
+      _vm._v("   \n          2\n          ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "btn btn-outline-primary  " }, [
+      _c("i", { staticClass: "fas fa-download" }),
+      _vm._v(" \n          1 \n          ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "modal-body" })
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9& ***!
@@ -65118,18 +65326,37 @@ var render = function() {
                           _c("div", { staticClass: "post-hover-banner" }, [
                             _c("div", { staticClass: "row" }, [
                               _c("div", { staticClass: "col-2" }, [
-                                _c("img", {
-                                  staticClass: "img-circle img-bordered-sm",
-                                  attrs: { src: post.image, alt: "user image" }
-                                })
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: { href: "/profile/" + post.user.id }
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "img-circle img-bordered-sm",
+                                      attrs: {
+                                        src: post.image,
+                                        alt: "user image"
+                                      }
+                                    })
+                                  ]
+                                )
                               ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "col-6" }, [
                                 _c("div", { staticClass: "direct-chat-text" }, [
-                                  _vm._v(
-                                    "\n                   " +
-                                      _vm._s(post.user.name) +
-                                      "\n                  "
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        href: "/profile/" + post.user.id
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "   " + _vm._s(post.user.name) + " "
+                                      )
+                                    ]
                                   )
                                 ])
                               ]),
@@ -65148,7 +65375,16 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
-                              _vm._m(0, true)
+                              _c("div", { staticClass: "col-1 m-1" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-outline-warning  ",
+                                    on: { click: _vm.likeButtonClicked }
+                                  },
+                                  [_c("i", { staticClass: "fas fa-thumbs-up" })]
+                                )
+                              ])
                             ])
                           ]),
                           _vm._v(" "),
@@ -65185,13 +65421,24 @@ var render = function() {
                             _c("div", { staticClass: "post-hover-banner" }, [
                               _c("div", { staticClass: "row" }, [
                                 _c("div", { staticClass: "col-2" }, [
-                                  _c("img", {
-                                    staticClass: "img-circle img-bordered-sm",
-                                    attrs: {
-                                      src: post.image,
-                                      alt: "user image"
-                                    }
-                                  })
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        href: "/profile/" + post.user.id
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        staticClass:
+                                          "img-circle img-bordered-sm",
+                                        attrs: {
+                                          src: post.image,
+                                          alt: "user image"
+                                        }
+                                      })
+                                    ]
+                                  )
                                 ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "col-6" }, [
@@ -65199,10 +65446,18 @@ var render = function() {
                                     "div",
                                     { staticClass: "direct-chat-text" },
                                     [
-                                      _vm._v(
-                                        "\n                   " +
-                                          _vm._s(post.user.name) +
-                                          "\n                  "
+                                      _c(
+                                        "a",
+                                        {
+                                          attrs: {
+                                            href: "/profile/" + post.user.id
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "   " + _vm._s(post.user.name) + " "
+                                          )
+                                        ]
                                       )
                                     ]
                                   )
@@ -65227,7 +65482,20 @@ var render = function() {
                                   )
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(1, true)
+                                _c("div", { staticClass: "col-1 m-1" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn btn-outline-warning  ",
+                                      on: { click: _vm.likeButtonClicked }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-thumbs-up"
+                                      })
+                                    ]
+                                  )
+                                ])
                               ])
                             ]),
                             _vm._v(" "),
@@ -65278,10 +65546,18 @@ var render = function() {
                                     "div",
                                     { staticClass: "direct-chat-text" },
                                     [
-                                      _vm._v(
-                                        "\n                   " +
-                                          _vm._s(post.user.name) +
-                                          "\n                  "
+                                      _c(
+                                        "a",
+                                        {
+                                          attrs: {
+                                            href: "/profile/" + post.user.id
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "   " + _vm._s(post.user.name) + " "
+                                          )
+                                        ]
                                       )
                                     ]
                                   )
@@ -65306,7 +65582,20 @@ var render = function() {
                                   )
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(2, true)
+                                _c("div", { staticClass: "col-1 m-1" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn btn-outline-warning  ",
+                                      on: { click: _vm.likeButtonClicked }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-thumbs-up"
+                                      })
+                                    ]
+                                  )
+                                ])
                               ])
                             ]),
                             _vm._v(" "),
@@ -65338,42 +65627,14 @@ var render = function() {
         attrs: { post: this.post, user: this.user }
       }),
       _vm._v(" "),
-      _vm._m(3)
+      _c("create-account-modal"),
+      _vm._v(" "),
+      _vm._m(0)
     ],
     1
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-1 m-1" }, [
-      _c("a", { staticClass: "btn btn-outline-warning  " }, [
-        _c("i", { staticClass: "fas fa-thumbs-up" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-1 m-1" }, [
-      _c("a", { staticClass: "btn btn-outline-warning  " }, [
-        _c("i", { staticClass: "fas fa-thumbs-up" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-1 m-1" }, [
-      _c("a", { staticClass: "btn btn-outline-warning  " }, [
-        _c("i", { staticClass: "fas fa-thumbs-up" })
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -81919,6 +82180,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
 });
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('post', __webpack_require__(/*! ./components/Post.vue */ "./resources/js/components/Post.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('image-clicked-modal', __webpack_require__(/*! ./components/ImageClickedModal.vue */ "./resources/js/components/ImageClickedModal.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('create-account-modal', __webpack_require__(/*! ./components/CreateAccountModal.vue */ "./resources/js/components/CreateAccountModal.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('dashboard', __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('firstLettertoUpperCase', function (text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -82001,6 +82263,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/CreateAccountModal.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/CreateAccountModal.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CreateAccountModal_vue_vue_type_template_id_5873eb47___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateAccountModal.vue?vue&type=template&id=5873eb47& */ "./resources/js/components/CreateAccountModal.vue?vue&type=template&id=5873eb47&");
+/* harmony import */ var _CreateAccountModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateAccountModal.vue?vue&type=script&lang=js& */ "./resources/js/components/CreateAccountModal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CreateAccountModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CreateAccountModal_vue_vue_type_template_id_5873eb47___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreateAccountModal_vue_vue_type_template_id_5873eb47___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CreateAccountModal.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/CreateAccountModal.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/CreateAccountModal.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAccountModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CreateAccountModal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateAccountModal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAccountModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/CreateAccountModal.vue?vue&type=template&id=5873eb47&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/CreateAccountModal.vue?vue&type=template&id=5873eb47& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAccountModal_vue_vue_type_template_id_5873eb47___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CreateAccountModal.vue?vue&type=template&id=5873eb47& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateAccountModal.vue?vue&type=template&id=5873eb47&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAccountModal_vue_vue_type_template_id_5873eb47___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAccountModal_vue_vue_type_template_id_5873eb47___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

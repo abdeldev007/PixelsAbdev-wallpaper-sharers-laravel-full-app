@@ -81,7 +81,9 @@
       <h1>PIXELS ABDEV</h1>
       <h2>The world needs to see your photograph </h2>
       <a href="#about" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
-      <button class="btn btn-outline-warning   ">BECOME A SHARER</button>
+      <button type="button"
+      onclick="createAccount()" class="btn btn-outline-warning   ">BECOME A SHARER</button>
+    <create-account-modal></create-account-modal>
     </div>
   </div >
   <!-- End Header -->
@@ -95,8 +97,11 @@
     <script>
 // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
 window.onscroll = function() {scrollFunction()};
-
+function createAccount(){
+  $("#createAccountModal").modal("show");
+}
 function scrollFunction() {
+ 
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
   document.getElementById("navbar").style.background="#212529";  
  } else {
