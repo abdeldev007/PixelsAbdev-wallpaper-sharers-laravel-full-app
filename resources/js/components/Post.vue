@@ -18,21 +18,22 @@
                       alt="user image"
                     />
                  </div>
-                   <div class="col-7">
+                   <div class="col-6">
                  <div class="direct-chat-text">
                    {{post.user.name}}
                   </div>
                   </div>
                   
-                   <div class="col-1">
-                   <button  @click="onDownload(post)" class="btn btn-outline-warning  ">
+                   <div class="col-1 m-1">
+                   <a  :download="post.title"   href="/img/profile.png" class="  btn btn-outline-warning  ">
                   <i class="fas fa-download"> </i>   
-                  </button> 
+                  </a> 
                   </div>
-                   <div class="col-2" >
-                   <button class="btn btn-outline-warning  ">
+                   
+                   <div class="col-1 m-1" >
+                   <a class="btn btn-outline-warning  ">
                   <i class="fas fa-thumbs-up"> </i>   
-                  </button> 
+                  </a> 
                   
                   </div>
                
@@ -61,24 +62,24 @@
                       alt="user image"
                     />
                  </div>
-                   <div class="col-7">
+                   <div class="col-6">
                  <div class="direct-chat-text">
                    {{post.user.name}}
                   </div>
                   </div>
-                  
-                   <div class="col-1">
-                   <button class="btn btn-outline-warning  ">
+                    
+                   <div class="col-1 m-1">
+                   <a download="w3logo"  :href="post.image" class="  btn btn-outline-warning  ">
                   <i class="fas fa-download"> </i>   
-                  </button> 
+                  </a> 
                   </div>
-                   <div class="col-2" >
-                   <button class="btn btn-outline-warning  ">
+                   
+                   <div class="col-1 m-1" >
+                   <a class="btn btn-outline-warning  ">
                   <i class="fas fa-thumbs-up"> </i>   
-                  </button> 
+                  </a> 
                   
                   </div>
-               
                 </div>
               </div>
               <a href="" data-toggle="modal" @click="newModal(post, post.user)">
@@ -101,21 +102,23 @@
                       alt="user image"
                     />
                  </div>
-                   <div class="col-7">
+                   <div class="col-6">
                  <div class="direct-chat-text">
                    {{post.user.name}}
                   </div>
                   </div>
-
-                   <div class="col-1">
-                   <button class="btn btn-outline-warning  ">
+   
+                   <div class="col-1 m-1">
+                   <a download="w3logo"  :href="post.image" class="  btn btn-outline-warning  ">
                   <i class="fas fa-download"> </i>   
-                  </button> 
+                  </a> 
                   </div>
-                   <div class="col-2" >
-                   <button class="btn btn-outline-warning  ">
+                   
+                   <div class="col-1 m-1" >
+                   <a class="btn btn-outline-warning  ">
                   <i class="fas fa-thumbs-up"> </i>   
-                  </button> 
+                  </a> 
+                  
                   </div>
                 </div>
               </div>

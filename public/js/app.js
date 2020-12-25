@@ -2241,6 +2241,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -65016,7 +65019,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("img", {
                     staticClass: "img-fluid d-block mx-auto",
-                    attrs: { src: " /img/img2.jpg", alt: "" }
+                    attrs: { src: _vm.post.image, alt: "" }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("dd")]),
@@ -65121,7 +65124,7 @@ var render = function() {
                                 })
                               ]),
                               _vm._v(" "),
-                              _c("div", { staticClass: "col-7" }, [
+                              _c("div", { staticClass: "col-6" }, [
                                 _c("div", { staticClass: "direct-chat-text" }, [
                                   _vm._v(
                                     "\n                   " +
@@ -65131,15 +65134,14 @@ var render = function() {
                                 ])
                               ]),
                               _vm._v(" "),
-                              _c("div", { staticClass: "col-1" }, [
+                              _c("div", { staticClass: "col-1 m-1" }, [
                                 _c(
-                                  "button",
+                                  "a",
                                   {
-                                    staticClass: "btn btn-outline-warning  ",
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.onDownload(post)
-                                      }
+                                    staticClass: "  btn btn-outline-warning  ",
+                                    attrs: {
+                                      download: post.title,
+                                      href: "/img/profile.png"
                                     }
                                   },
                                   [_c("i", { staticClass: "fas fa-download" })]
@@ -65192,7 +65194,7 @@ var render = function() {
                                   })
                                 ]),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "col-7" }, [
+                                _c("div", { staticClass: "col-6" }, [
                                   _c(
                                     "div",
                                     { staticClass: "direct-chat-text" },
@@ -65206,9 +65208,26 @@ var render = function() {
                                   )
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(1, true),
+                                _c("div", { staticClass: "col-1 m-1" }, [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "  btn btn-outline-warning  ",
+                                      attrs: {
+                                        download: "w3logo",
+                                        href: post.image
+                                      }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-download"
+                                      })
+                                    ]
+                                  )
+                                ]),
                                 _vm._v(" "),
-                                _vm._m(2, true)
+                                _vm._m(1, true)
                               ])
                             ]),
                             _vm._v(" "),
@@ -65254,7 +65273,7 @@ var render = function() {
                                   })
                                 ]),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "col-7" }, [
+                                _c("div", { staticClass: "col-6" }, [
                                   _c(
                                     "div",
                                     { staticClass: "direct-chat-text" },
@@ -65268,9 +65287,26 @@ var render = function() {
                                   )
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(3, true),
+                                _c("div", { staticClass: "col-1 m-1" }, [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "  btn btn-outline-warning  ",
+                                      attrs: {
+                                        download: "w3logo",
+                                        href: post.image
+                                      }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-download"
+                                      })
+                                    ]
+                                  )
+                                ]),
                                 _vm._v(" "),
-                                _vm._m(4, true)
+                                _vm._m(2, true)
                               ])
                             ]),
                             _vm._v(" "),
@@ -65302,7 +65338,7 @@ var render = function() {
         attrs: { post: this.post, user: this.user }
       }),
       _vm._v(" "),
-      _vm._m(5)
+      _vm._m(3)
     ],
     1
   )
@@ -65312,8 +65348,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-2" }, [
-      _c("button", { staticClass: "btn btn-outline-warning  " }, [
+    return _c("div", { staticClass: "col-1 m-1" }, [
+      _c("a", { staticClass: "btn btn-outline-warning  " }, [
         _c("i", { staticClass: "fas fa-thumbs-up" })
       ])
     ])
@@ -65322,18 +65358,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-1" }, [
-      _c("button", { staticClass: "btn btn-outline-warning  " }, [
-        _c("i", { staticClass: "fas fa-download" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-2" }, [
-      _c("button", { staticClass: "btn btn-outline-warning  " }, [
+    return _c("div", { staticClass: "col-1 m-1" }, [
+      _c("a", { staticClass: "btn btn-outline-warning  " }, [
         _c("i", { staticClass: "fas fa-thumbs-up" })
       ])
     ])
@@ -65342,18 +65368,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-1" }, [
-      _c("button", { staticClass: "btn btn-outline-warning  " }, [
-        _c("i", { staticClass: "fas fa-download" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-2" }, [
-      _c("button", { staticClass: "btn btn-outline-warning  " }, [
+    return _c("div", { staticClass: "col-1 m-1" }, [
+      _c("a", { staticClass: "btn btn-outline-warning  " }, [
         _c("i", { staticClass: "fas fa-thumbs-up" })
       ])
     ])

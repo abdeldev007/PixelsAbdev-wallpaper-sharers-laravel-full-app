@@ -927,13 +927,13 @@ header.masthead .intro-text .intro-heading {
   height: 50px;
   width: 50px;
 }
-.post-container .post-hover-banner button{
-  margin-top:17px ;
+.post-container .post-hover-banner a{
+  margin-top:15px ;
   margin-left:2px;
   margin-right:2px;
 }
 .post-container .post-hover-banner  h5{
-  margin: 20px;
+  margin: 19px;
   color: white;
   text-align: start;
  }

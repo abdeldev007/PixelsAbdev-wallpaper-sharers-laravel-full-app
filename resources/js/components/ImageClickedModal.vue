@@ -49,7 +49,7 @@
                       <p class="item-intro text-muted"></p>
                       <img
                         class="img-fluid d-block mx-auto"
-                        src=" /img/img2.jpg"
+                        :src="post.image"
                         alt=""
                       />
                       <p>dd</p>
