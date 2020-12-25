@@ -48,6 +48,7 @@ const router = new VueRouter({
     routes // short for `routes: routes`
 })
 
+Vue.component('login-form', require('./components/login/LoginForm.vue').default);
 
 Vue.component('post', require('./components/Post.vue').default);
 Vue.component('image-clicked-modal', require('./components/ImageClickedModal.vue').default);

@@ -13,7 +13,7 @@
                 <div class="user-block">
                   <img
                     class="img-circle img-bordered-sm"
-                    src="/img/profile.png"
+                    src="/img/logo.png"
                     alt="user image"
                   />
                   <span class="username">
@@ -21,15 +21,7 @@
                   </span>
                  
                 </div>
-            
-                  <button class="btn btn-outline-primary  ">
-                  <i class="fas fa-thumbs-up"> </i>   
-                  2
-                  </button> 
-                    <button class="btn btn-outline-primary  ">
-                  <i class="fas fa-download"> </i> 
-                  1 
-                  </button>    
+       
                    <button
                   type="button"
                   class="btn btn-outline-danger"
@@ -42,9 +34,19 @@
                 <div class="row justify-content-center">
                   <div class="col-lg-12">
                     <div class="modal-body">
-                      <!-- Project Details Go Here-->
-                      
-             
+                      <!--regiter form Here-->
+                      <login-form></login-form>
+                                      
+                        <div class="social-auth-links text-center">
+                          <p>- OR -</p>
+                          <a href="#" class="btn bg-blue  btn-facebook "><i class="fas fa-facebook"></i> Sign up using
+                            Facebook</a>
+                          <a href="#" class="btn  bg-red  btn-google  "><i class="fas  fa-facebook-squa"></i> Sign up using
+                            Google+</a>
+                        </div>
+                    
+                        <a href="login.html" class="text-center">I already have a membership</a>
+                              
                      
                     </div>
                   </div>
@@ -56,7 +58,9 @@
 </template>
 
 <script>
+import LoginForm from './login/LoginForm.vue';
     export default {
+  components: { LoginForm },
          
         methods:{
         
