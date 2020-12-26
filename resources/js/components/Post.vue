@@ -142,8 +142,8 @@
       </div>
     </section>  
 <image-clicked-modal :post= " this.post "  :user= " this.user " ></image-clicked-modal>
-<create-account-modal></create-account-modal>
-    <div class="container mt-5">
+
+ <div class="container mt-5">
       <div class="row justify-content-center">
         <!-- Portfolio Grid
       <section class=" " id="portfolio">
@@ -191,10 +191,9 @@
 </template>
 
 <script>
-import CreateAccountModal from './CreateAccountModal.vue';
-import ImageClickedModal from './ImageClickedModal.vue';
+ import ImageClickedModal from './ImageClickedModal.vue';
 export default {
-  components: { ImageClickedModal, CreateAccountModal },
+  components: { ImageClickedModal },
    props: ["user_id" ],
 
   data() {

@@ -56,7 +56,9 @@ class RegisterController extends BaseController
     }
     public function authUser( )
     {
-        return Auth::user(); 
+        $user = Auth::user();
+        dd($user);
+        return auth('api')->user(); 
 
     }
 }

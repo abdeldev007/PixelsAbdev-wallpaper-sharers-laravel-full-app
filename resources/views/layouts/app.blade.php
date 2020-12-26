@@ -83,8 +83,8 @@
       <a href="#about" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
       <button type="button"
       onclick="createAccount()" class="btn btn-outline-warning   ">BECOME A SHARER</button>
-    <create-account-modal></create-account-modal>
-    </div>
+      @include('include.loginFormModal')
+      </div>
   </div >
   <!-- End Header -->
 
@@ -100,6 +100,7 @@ window.onscroll = function() {scrollFunction()};
 function createAccount(){
   $("#createAccountModal").modal("show");
 }
+
 function scrollFunction() {
  
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
