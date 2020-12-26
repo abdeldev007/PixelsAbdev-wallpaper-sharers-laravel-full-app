@@ -195,10 +195,13 @@ import CreateAccountModal from './CreateAccountModal.vue';
 import ImageClickedModal from './ImageClickedModal.vue';
 export default {
   components: { ImageClickedModal, CreateAccountModal },
+   props: ["user_id" ],
+
   data() {
     return {
       index: 0,
       editMode: false,
+     
       posts: [],
       cols: [1, 2, 3],
       i: 1,
@@ -246,7 +249,11 @@ export default {
     },
   },
   created() {
+    if(this.user_id==="0"){
     axios.get("api/post").then(({ data }) => (this.posts = data.data));
+    }else {
+       axios.get("api/post/user/"+this.user_id).then(({ data }) => (this.posts = data.data));
+    }
   },
 };
 </script>

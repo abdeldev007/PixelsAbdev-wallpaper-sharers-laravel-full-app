@@ -2353,6 +2353,7 @@ __webpack_require__.r(__webpack_exports__);
     ImageClickedModal: _ImageClickedModal_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     CreateAccountModal: _CreateAccountModal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  props: ["user_id"],
   data: function data() {
     return {
       index: 0,
@@ -2403,10 +2404,17 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get("api/post").then(function (_ref) {
-      var data = _ref.data;
-      return _this.posts = data.data;
-    });
+    if (this.user_id === "0") {
+      axios.get("api/post").then(function (_ref) {
+        var data = _ref.data;
+        return _this.posts = data.data;
+      });
+    } else {
+      axios.get("api/post/user/" + this.user_id).then(function (_ref2) {
+        var data = _ref2.data;
+        return _this.posts = data.data;
+      });
+    }
   }
 });
 
@@ -2421,251 +2429,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -65752,16 +65515,21 @@ var render = function() {
             _vm._m(1),
             _vm._v(" "),
             _c("div", { staticClass: "tab-content" }, [
-              _vm._m(2),
+              _c(
+                "div",
+                { staticClass: "tab-pane", attrs: { id: "activity" } },
+                [_c("post", { attrs: { user_id: "user.id" } })],
+                1
+              ),
               _vm._v(" "),
               _c(
                 "div",
                 { staticClass: "tab-pane active", attrs: { id: "settings" } },
                 [
                   _c("form", { staticClass: "form-horizontal" }, [
-                    _vm._m(3),
+                    _vm._m(2),
                     _vm._v(" "),
-                    _vm._m(4),
+                    _vm._m(3),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
                       _c(
@@ -65840,20 +65608,18 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
+                    _vm._m(4),
+                    _vm._v(" "),
                     _vm._m(5),
                     _vm._v(" "),
-                    _vm._m(6),
-                    _vm._v(" "),
-                    _vm._m(7)
+                    _vm._m(6)
                   ])
                 ]
               )
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _vm._m(8)
+      ])
     ]),
     _vm._v(" "),
     _c("link", { attrs: { href: "css/style.css", rel: "stylesheet" } })
@@ -65974,324 +65740,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tab-pane", attrs: { id: "activity" } }, [
-      _c(
-        "section",
-        { staticClass: "page-section bg-light", attrs: { id: "portfolio" } },
-        [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "text-center" }, [
-              _c("h2", { staticClass: "section-heading text-uppercase" }, [
-                _vm._v("Portfolio")
-              ]),
-              _vm._v(" "),
-              _c("h3", { staticClass: "section-subheading text-muted" }, [
-                _vm._v(
-                  "\n                      Lorem ipsum dolor sit amet consectetur.\n                    "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-4 col-sm-6 mb-4" }, [
-                _c("div", { staticClass: "portfolio-item" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "portfolio-link",
-                      attrs: {
-                        "data-toggle": "modal",
-                        href: "#portfolioModal1"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "portfolio-hover" }, [
-                        _c("div", { staticClass: "portfolio-hover-content" }, [
-                          _c("i", { staticClass: "fas fa-plus fa-3x" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "img-fluid",
-                        attrs: {
-                          src: " /img/portfolio/01-thumbnail.jpg",
-                          alt: ""
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "portfolio-caption" }, [
-                    _c("div", { staticClass: "portfolio-caption-heading" }, [
-                      _vm._v("Threads")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "portfolio-caption-subheading text-muted"
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Illustration\n                          "
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-sm-6 mb-4" }, [
-                _c("div", { staticClass: "portfolio-item" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "portfolio-link",
-                      attrs: {
-                        "data-toggle": "modal",
-                        href: "#portfolioModal2"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "portfolio-hover" }, [
-                        _c("div", { staticClass: "portfolio-hover-content" }, [
-                          _c("i", { staticClass: "fas fa-plus fa-3x" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "img-fluid",
-                        attrs: {
-                          src: " /img/portfolio/02-thumbnail.jpg",
-                          alt: ""
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "portfolio-caption" }, [
-                    _c("div", { staticClass: "portfolio-caption-heading" }, [
-                      _vm._v("Explore")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "portfolio-caption-subheading text-muted"
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Graphic Design\n                          "
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-sm-6 mb-4" }, [
-                _c("div", { staticClass: "portfolio-item" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "portfolio-link",
-                      attrs: {
-                        "data-toggle": "modal",
-                        href: "#portfolioModal3"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "portfolio-hover" }, [
-                        _c("div", { staticClass: "portfolio-hover-content" }, [
-                          _c("i", { staticClass: "fas fa-plus fa-3x" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "img-fluid",
-                        attrs: {
-                          src: " /img/portfolio/03-thumbnail.jpg",
-                          alt: ""
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "portfolio-caption" }, [
-                    _c("div", { staticClass: "portfolio-caption-heading" }, [
-                      _vm._v("Finish")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "portfolio-caption-subheading text-muted"
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Identity\n                          "
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-sm-6 mb-4 mb-lg-0" }, [
-                _c("div", { staticClass: "portfolio-item" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "portfolio-link",
-                      attrs: {
-                        "data-toggle": "modal",
-                        href: "#portfolioModal4"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "portfolio-hover" }, [
-                        _c("div", { staticClass: "portfolio-hover-content" }, [
-                          _c("i", { staticClass: "fas fa-plus fa-3x" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "img-fluid",
-                        attrs: {
-                          src: " /img/portfolio/04-thumbnail.jpg",
-                          alt: ""
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "portfolio-caption" }, [
-                    _c("div", { staticClass: "portfolio-caption-heading" }, [
-                      _vm._v("Lines")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "portfolio-caption-subheading text-muted"
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Branding\n                          "
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-sm-6 mb-4 mb-sm-0" }, [
-                _c("div", { staticClass: "portfolio-item" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "portfolio-link",
-                      attrs: {
-                        "data-toggle": "modal",
-                        href: "#portfolioModal5"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "portfolio-hover" }, [
-                        _c("div", { staticClass: "portfolio-hover-content" }, [
-                          _c("i", { staticClass: "fas fa-plus fa-3x" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "img-fluid",
-                        attrs: {
-                          src: " /img/portfolio/05-thumbnail.jpg",
-                          alt: ""
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "portfolio-caption" }, [
-                    _c("div", { staticClass: "portfolio-caption-heading" }, [
-                      _vm._v(
-                        "\n                            Southwest\n                          "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "portfolio-caption-subheading text-muted"
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Website Design\n                          "
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 col-sm-6" }, [
-                _c("div", { staticClass: "portfolio-item" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "portfolio-link",
-                      attrs: {
-                        "data-toggle": "modal",
-                        href: "#portfolioModal6"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "portfolio-hover" }, [
-                        _c("div", { staticClass: "portfolio-hover-content" }, [
-                          _c("i", { staticClass: "fas fa-plus fa-3x" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "img-fluid",
-                        attrs: {
-                          src: " /img/portfolio/06-thumbnail.jpg",
-                          alt: ""
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "portfolio-caption" }, [
-                    _c("div", { staticClass: "portfolio-caption-heading" }, [
-                      _vm._v("Window")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "portfolio-caption-subheading text-muted"
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Photography\n                          "
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
       _c(
         "label",
@@ -66377,96 +65825,6 @@ var staticRenderFns = [
         )
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "portfolioModal2",
-          tabindex: "-1",
-          role: "dialog",
-          "aria-hidden": "false"
-        }
-      },
-      [
-        _c("div", { staticClass: "modal-dialog" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                { staticClass: "modal-title", attrs: { id: "addNewLabel" } },
-                [_vm._v("Add New")]
-              ),
-              _vm._v(" "),
-              _c("button", {
-                staticClass: "btn-close",
-                attrs: {
-                  type: "button",
-                  "data-bs-dismiss": "modal",
-                  "aria-label": "Close"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "row justify-content-center" }, [
-                _c("div", { staticClass: "col-lg-8" }, [
-                  _c("div", { staticClass: "modal-body" }, [
-                    _c("h2", { staticClass: "text-uppercase" }, [
-                      _vm._v("Project Name")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "item-intro text-muted" }, [
-                      _vm._v(
-                        "\n                    Lorem ipsum dolor sit amet consectetur.\n                  "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("img", {
-                      staticClass: "img-fluid d-block mx-auto",
-                      attrs: { src: " /img/portfolio/01-full.jpg", alt: "" }
-                    }),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "\n                    Use this area to describe your project. Lorem ipsum dolor\n                    sit amet, consectetur adipisicing elit. Est blanditiis\n                    dolorem culpa incidunt minus dignissimos deserunt repellat\n                    aperiam quasi sunt officia expedita beatae cupiditate,\n                    maiores repudiandae, nostrum, reiciendis facere nemo!\n                  "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "list-inline" }, [
-                      _c("li", [_vm._v("Date: January 2020")]),
-                      _vm._v(" "),
-                      _c("li", [_vm._v("Client: Threads")]),
-                      _vm._v(" "),
-                      _c("li", [_vm._v("Category: Illustration")])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-primary",
-                        attrs: { "data-dismiss": "modal", type: "button" }
-                      },
-                      [
-                        _c("i", { staticClass: "fas fa-times mr-1" }),
-                        _vm._v(
-                          "\n                    Close Project\n                  "
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]
-    )
   }
 ]
 render._withStripped = true

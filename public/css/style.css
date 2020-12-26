@@ -948,4 +948,20 @@ header.masthead .intro-text .intro-heading {
    
    border:solid 2px #eef0f2;
  }
+ #activity  .post-container .post-hover-banner  img{
+ 
+  height: 50px;
+  width: 50px;
+}
+ #activity   .post-container .post-hover-banner button,.post-container .post-hover-banner a{
+  margin-top:15px ;
+ 
+  margin-right:2px;
+  margin-left:2px;
+}
+ 
+  #activity   .direct-chat-text{
+    visibility :hidden;
+   
+ }
   /*END POSTS CSS*/

@@ -10,6 +10,11 @@ use App\Http\Resources\Post as PostResource;
 use Illuminate\Support\Facades\Auth;
 class PostsController extends BaseController
 {
+
+    public function userPosts($id)
+    {        
+       return  $this->sendResponse(PostResource::collection(Post::with('user')->get()->where('user_id',$id)), 'Posts retrieved successfully.');
+    }
     /**
      * Display a listing of the resource.
      *

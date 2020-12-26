@@ -29,6 +29,8 @@ Route::apiResources(['user'=>'App\Http\Controllers\API\UserController']) ;
 Route::get( 'profile','App\Http\Controllers\API\RegisterController@authUser' ) ;
 Route::apiResources(['post'=>'App\Http\Controllers\API\PostsController']) ;
 Route::get( 'post/{id}','App\Http\Controllers\API\PostsController@post' ) ;
+Route::get( 'post/user/{id}','App\Http\Controllers\API\PostsController@userPosts' ) ;
+
 Route::get( 'user/{id}','App\Http\Controllers\API\PostsController@show' ) ;
 
 Route::get( 'authUser','App\Http\Controllers\API\PostsController@authUser' ) ;
