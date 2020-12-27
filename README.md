@@ -1,8 +1,8 @@
 WALLPAPERS SHARERS : LARAVEL/VUE.JS APP 
 (THIS APP IS STILLS ON PROGRESS...)
 <br>
-Improving the Navbar style
- <img src="https://raw.githubusercontent.com/abdeldev007/PixelsAbdev-wallpaper-sharers-laravel-full-app/master/screenshots/hero.PNG"/>
+Home page : last update
+ <img src="https://raw.githubusercontent.com/abdeldev007/PixelsAbdev-wallpaper-sharers-laravel-full-app/master/screenshots/home-last.PNG"/>
 
 Login/Register Page
  <img src="https://raw.githubusercontent.com/abdeldev007/PixelsAbdev-wallpaper-sharers-laravel-full-app/master/screenshots/register.PNG"/>
