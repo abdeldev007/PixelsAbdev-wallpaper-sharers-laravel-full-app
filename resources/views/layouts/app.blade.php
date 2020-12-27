@@ -45,12 +45,39 @@
     <div class="hero-container">
       <h1>PIXELS ABDEV</h1>
       <h2>The world needs to see your photograph </h2>
-      <a href="#about" class="btn-scroll scrollto" title="Scroll Down"><i class="bx bx-chevron-down"></i></a>
-      <button type="button"
-      onclick="createAccount()" class="btn btn-outline-warning   ">BECOME A SHARER</button>
-      
-      @include('include.loginFormModal')
+      @if (Auth::User()!=null)
+          <div style="width: 100%" class="row">
+        <div class="col-md-2">
+          <a style="color: chocolate  ; width:100% " href="/account/{{Auth::User()->id}}" class="btn btn-outline-warning   ">ACCOUNT</a>
+
+        </div>
+        <div class="col-md-2">
+          <a style="color: chocolate ; width:100% " href="/edit/{{Auth::User()->id}}" class="btn btn-outline-warning   ">EDIT</a>
+
+        </div>
+        <div class="col-md-3">
+          <a style="color: chocolate  ; width:100% " href="/register" class="btn btn-outline-warning   ">NEW POST</a>
+
+        </div>
+        <div class="col-md-3">
+          <a style="color: chocolate  ; width:100% " href="/register" class="btn btn-outline-warning   ">FOLLOWERS</a>
+
+        </div>
+       
+        <div class="col-md-2">
+          <a style="color: chocolate  ; width:100% " href="/register" class="btn btn-outline-warning   ">DEVELOPER</a>
+
+        </div>
+      </div>  
+      @else
+      <div class="col-md-3">
+        <a style="color: chocolate  ; width:100% " href="/register" class="btn btn-outline-warning   ">BECOME A SHARER</a>
+
       </div>
+      @endif
+    
+      
+       </div>
   </div >
   <!-- End Header -->
 
@@ -61,7 +88,8 @@
         </main>
     </div>
     <script>
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+   
+// When the user scrolls down   
 window.onscroll = function() {scrollFunction()};
 function createAccount(){
   $("#createAccountModal").modal("show");
@@ -69,6 +97,8 @@ function createAccount(){
 function hideRegisterModal(){
   $("#createAccountModal").modal("hide");
 }
+document.getElementById("navbar").style.background="rgba(0, 0, 0, 0)";  
+
 function scrollFunction() {
  
   if (document.body.scrollTop > 160 || document.documentElement.scrollTop > 160) {
@@ -79,6 +109,7 @@ function scrollFunction() {
  
   }
 }
+ 
     </script>
  
 

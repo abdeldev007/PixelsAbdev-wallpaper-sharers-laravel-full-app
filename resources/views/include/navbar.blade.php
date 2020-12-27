@@ -1,5 +1,5 @@
  
-    <nav id="navbar" class="fixed-top  navbar navbar-expand-lg  ">
+         <nav id="navbar" class="fixed-top  navbar navbar-expand-lg  ">
     <a class="navbar-brand active" href="#">PixelsAbdev</a>
     <button class="btn btn-outline-warning   navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -32,27 +32,19 @@
             </li>
 
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">OK</button>
-        </form>
-        @guest
+        <form class="form-inline m-0 ">
+            <div class="row">
+                <div class="col-8 m-0">
+                <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                            
+                </div>
+                <div class="col-4  m-0 my-sm-0">
+            <a style="color: white" class="btn btn-outline-warning" type="submit">OK</a>
 
-        @else
-            <div class="dropdown">
-                <a class="nav-link dropdown-toggle" id="navBarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <div class="user-block">
-
-                        <img class="img-circle img-bordered-sm" src="/img/logo.png" alt="user image" />
-
-                    </div>
-
-                </a>
-
+                </div>
             </div>
-
-        @endguest
+        </form>
+       
     </div>
 </nav>
  

@@ -32,26 +32,64 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
- 
+
 </head>
 <body>
-  
+    <div id="app">
  
-  <div class="login-bg"  >
-    <main class="py-4">
-        @yield('login-content')
-    </main>
+ <div id="hero" >
+  <div class="container">
+ <!-- .nav-menu -->
+  @include('include.navbar')
+    <div class="hero-container  mt-5">
  
-     
- 
+            @yield('login-content')
+
+      
+      </div>
+  </div >
   <!-- End Header -->
 
     
+ </div>
+ 
 
-
+      
     </div>
+    <script>
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+function createAccount(){
+  $("#createAccountModal").modal("show");
+}
+function hideRegisterModal(){
+  $("#createAccountModal").modal("hide");
+}
+if (globalThis.outerWidth>1100){
+  document.getElementById("navbar").style.background="rgba(0, 0, 0, 0)";  
 
-    
+}
+
+function scrollFunction() {
+ 
+  if (globalThis.outerWidth<900 ||   document.body.scrollTop > 160 || document.documentElement.scrollTop > 160)  {
+  document.getElementById("navbar").style.background="#212529";  
+ } else {
+ 
+    document.getElementById("navbar").style.background="rgba(0, 0, 0, 0)";  
+ 
+  }
+}
+    console.log("gggggg", globalThis.outerWidth);
+
+    if( globalThis.outerWidth<720){
+      document.getElementById("navbar").style.background="#2B2B2B";  
+
+    }
+    </script>
+ 
+
+ 
 </body>
 </html>
 
