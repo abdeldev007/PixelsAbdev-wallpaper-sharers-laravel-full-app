@@ -7,6 +7,7 @@
     </h3>
   </div>
 <post user_id="0"></post>
+
  <create-account-modal></create-account-modal>
  @endsection
 

@@ -986,3 +986,34 @@ header.masthead .intro-text .intro-heading {
      margin :10px;
   }
   
+ /*dropdown men*/
+ 
+
+
+
+
+
+/* A simple, css only, (some-what) responsive menu */
+ 
+ 
+a  :hover {
+  text-decoration: none;
+  }
+ 
+
+nav {
+  position: relative;
+  background: #2B2B2B;
+  margin-top: 10px;
+   margin-left: 50px;
+   margin-right: 50px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px #0E0E0E;
+  border-top: 1px solid #FBC202;
+
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.856);
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+ 
