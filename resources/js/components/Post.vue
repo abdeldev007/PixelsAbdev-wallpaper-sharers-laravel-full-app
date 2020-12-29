@@ -1,7 +1,7 @@
 <template>
   <div>
-    <section id="portfolio">
-      <div class="row">
+    <section  style="background-color: white ;">
+      <div class="row " style="background-color: white">
         <div v-for="i in cols" :key="i" class="column">
           <div v-if="i === 1">
             <div
@@ -11,10 +11,10 @@
             >
               <div class="post-hover-banner">
                 <div class="row">
-                     <div class="col-2">
-                     <a  :href="'/profile/'+post.user.id">
+                     <div style="margin-bottom:20px" class="col-2  ">
+                     <a   :href="'/profile/'+post.user.id">
                         <img 
-                      class="img-circle img-bordered-sm"
+                      class=" img-circle img-bordered-sm"
                       :src="post.image"
                       alt="user image"
                     />
@@ -185,7 +185,7 @@
       </section>-->
    
       </div>
-      <link href="css/style.css" rel="stylesheet" />
+      <link href="/css/style.css" rel="stylesheet" />
     </div>
   </div>
 </template>
@@ -249,9 +249,9 @@ export default {
   },
   created() {
     if(this.user_id==="0"){
-    axios.get("api/post").then(({ data }) => (this.posts = data.data));
+    axios.get("/api/post").then(({ data }) => (this.posts = data.data));
     }else {
-       axios.get("api/post/user/"+this.user_id).then(({ data }) => (this.posts = data.data));
+       axios.get("/api/post/user/"+this.user_id).then(({ data }) => (this.posts = data.data));
     }
   },
 };

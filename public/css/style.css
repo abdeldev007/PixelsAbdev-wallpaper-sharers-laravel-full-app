@@ -1,407 +1,452 @@
- 
-body {
- 
-    overflow-x: hidden;
-    font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
-}
+ body {
 
-p {
-    line-height: 1.75
-}
-  
- 
+     overflow-x: hidden;
+     font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+ }
 
- 
+ p {
+     line-height: 1.75
+ }
 
-section {
-    padding: 100px 0
-}
 
-section h2.section-heading {
-    font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 15px
-}
 
- 
-@media (min-width:768px) {
-    section {
-        padding: 150px 0
-    }
-}
 
-.btn {
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    font-weight: 700
-}
 
-.btn-xl {
-    font-size: 18px;
-    padding: 20px 40px
-}
- 
-.btn-primary:active,
-.btn-primary:focus,
-.btn-primary:hover {
-    background-color: #fec810 !important;
-    border-color: #ffffff !important;
-    color: rgb(0, 0, 0)
-}
+ section {
+     padding: 5px 0
+ }
 
-.btn-primary:active,
-.btn-primary:focus {
-    -webkit-box-shadow: 0 0 0 .2rem rgba(254, 209, 55, .5) !important;
-    box-shadow: 0 0 0 .2rem rgba(254, 209, 55, .5) !important
-}
- 
+ section h2.section-heading {
+     font-size: 40px;
+     margin-top: 0;
+     margin-bottom: 15px
+ }
 
- 
- 
+
+ @media (min-width:768px) {
+     section {
+         padding: 150px 0
+     }
+ }
+
+ .btn {
+     font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+     font-weight: 700
+ }
+
+ .btn-xl {
+     font-size: 18px;
+     padding: 20px 40px
+ }
+
+ .btn-primary:active,
+ .btn-primary:focus,
+ .btn-primary:hover {
+     background-color: #fec810 !important;
+     border-color: #ffffff !important;
+     color: rgb(0, 0, 0)
+ }
+
+ .btn-primary:active,
+ .btn-primary:focus {
+     -webkit-box-shadow: 0 0 0 .2rem rgba(254, 209, 55, .5) !important;
+     box-shadow: 0 0 0 .2rem rgba(254, 209, 55, .5) !important
+ }
+
+
+
+
  .navbar-brand.active,
-  .navbar-brand:active,
-  .navbar-brand:focus,
-  .navbar-brand:hover {
-    color: #fec503;
-    font-weight: 400;
+ .navbar-brand:active,
+ .navbar-brand:focus,
+ .navbar-brand:hover {
+     color: #fec503;
+     font-weight: 400;
 
-}
-/*-----------------------
+ }
+
+ /*-----------------------
 # Header
 -------------------------- */
- 
-   
-#hero .navbar .navbar-nav .nav-item .nav-link {
-    font-size:100%;
-    font-weight: 200;
-    padding-left:  30px;
-    letter-spacing: 1px;
-    color: rgb(255, 255, 255);
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
-}
 
- 
-#navbar .navbar-nav .nav-item .nav-link:hover {
-    color: #ff9100
-}
-.nav-link{
-  color: rgb(255, 255, 255);
-}
-      
-  /*--------------------------------------------------------------
+
+ #hero .navbar .navbar-nav .nav-item .nav-link {
+     font-size: 100%;
+     font-weight: 200;
+     padding-left: 30px;
+     letter-spacing: 1px;
+     color: rgb(255, 255, 255);
+     font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+ }
+
+
+ #navbar .navbar-nav .nav-item .nav-link:hover {
+     color: #ff9100
+ }
+
+ .nav-link {
+     color: rgb(255, 255, 255);
+ }
+
+ /*--------------------------------------------------------------
   # Navigation Menu
   --------------------------------------------------------------*/
-  /* Desktop Navigation */
-  .nav-menu, .nav-menu * { 
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .nav-menu > ul {
-    display: flex;
-  }
-  
-  .nav-menu > ul > li {
-    position: relative;
-    justify-content: center;
-  }
-   
-    
-  @media (max-width: 1366px) {
-    .nav-menu .drop-down .drop-down ul {
-      left: -90%;
-    }
-    .nav-menu .drop-down .drop-down:hover > ul {
-      left: -100%;
-    }
-    .nav-menu .drop-down .drop-down > a:after {
-      content: "\ea9d";
-    }
-  }
-   
- 
-  
-  /*--------------------------------------------------------------
+ /* Desktop Navigation */
+ .nav-menu,
+ .nav-menu * {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
+
+ .nav-menu>ul {
+     display: flex;
+ }
+
+ .nav-menu>ul>li {
+     position: relative;
+     justify-content: center;
+ }
+
+
+ @media (max-width: 1366px) {
+     .nav-menu .drop-down .drop-down ul {
+         left: -90%;
+     }
+
+     .nav-menu .drop-down .drop-down:hover>ul {
+         left: -100%;
+     }
+
+     .nav-menu .drop-down .drop-down>a:after {
+         content: "\ea9d";
+     }
+ }
+
+
+
+ /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
-  #hero {
-    width: 100%;
-    height: 100vh;
-    background: url("../img/header-bg.jpg") top right;
-    background-size: cover;
-    position: relative;
-  }
-  
-  #hero:before {
-    background: rgba(255, 255, 255, 0.007);
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  .a{
-    color :white;
-  }
-  #hero .hero-container {
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 15px;
-  }
-  
-  #hero h1 {
-    margin: 0 0 10px 0;
-    font-size: 64px;
-    font-family: "Satisfy", serif;
-    color: #fff;
-  }
-  
-  #hero h2 {
-    color: #eee;
-    margin-bottom: 50px;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  
-  #hero .btn-scroll {
-    transition: 0.4s;
-    color: rgba(255, 255, 255, 0.6);
-    animation: up-down 1s ease-in-out infinite alternate-reverse both;
-  }
-  
-  #hero .btn-scroll i {
-    font-size: 48px;
-  }
-  
-  #hero .btn-scroll:hover {
-    color: #ffb727;
-  }
-  
-  @media (min-width: 1024px) {
-    #hero {
-      background-attachment: fixed;
-    }
-  }
-  
-  @media (max-width: 575px) {
-    #hero h1 {
-      font-size: 40px;
-    }
-    #hero h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-  }
-  
-  @-webkit-keyframes up-down {
-    0% {
-      transform: translateY(5px);
-    }
-    100% {
-      transform: translateY(-5px);
-    }
-  }
-  
-  @keyframes up-down {
-    0% {
-      transform: translateY(5px);
-    }
-    100% {
-      transform: translateY(-5px);
-    }
-  }       
- 
-  
+ #hero {
+     width: 100%;
+     height: 100vh;
+     background: url("../img/header-bg.jpg") top right;
+     background-size: cover;
+     position: relative;
+ }
 
-   img {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  img :hover{
-    box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.2);
-  }
-  * {
-    box-sizing: border-box;
-  }
-  
-    
-  .header {
-    text-align: center;
-    padding: 32px;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  
-  /*POSTS CSS*/
-  
-  .row {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    padding: 0 4px;
-  }
-  
-  /* Create four equal columns that sits next to each other */
-  .column {
-    -ms-flex: 33%; /* IE10 */
-    flex: 33%;
-    max-width: 33%;
-    padding: 0 4px;
-  }
-  
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
-  }
-  
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 800px) {
-    .column {
-      -ms-flex: 50%;
-      flex: 50%;
-      max-width: 50%;
-    }
-  }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column {
-      -ms-flex: 100%;
-      flex: 100%;
-      max-width: 100%;
-    }
-  }
+ #hero:before {
+     background: rgba(255, 255, 255, 0.007);
+     position: absolute;
+     bottom: 0;
+     top: 0;
+     left: 0;
+     right: 0;
+ }
+
+ .a {
+     color: white;
+ }
+
+ #hero .hero-container {
+     position: absolute;
+     bottom: 0;
+     top: 0;
+     left: 0;
+     right: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     padding: 0 15px;
+ }
+
+ #hero h1 {
+     margin: 0 0 10px 0;
+     font-size: 64px;
+     font-family: "Satisfy", serif;
+     color: #fff;
+ }
+
+ #hero h2 {
+     color: #eee;
+     margin-bottom: 50px;
+     font-size: 13px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+ }
+
+ #hero .btn-scroll {
+     transition: 0.4s;
+     color: rgba(255, 255, 255, 0.6);
+     animation: up-down 1s ease-in-out infinite alternate-reverse both;
+ }
+
+ #hero .btn-scroll i {
+     font-size: 48px;
+ }
+
+ #hero .btn-scroll:hover {
+     color: #ffb727;
+ }
+
+ @media (min-width: 1024px) {
+     #hero {
+         background-attachment: fixed;
+     }
+ }
+
+ @media (max-width: 575px) {
+     #hero h1 {
+         font-size: 40px;
+     }
+
+     #hero h2 {
+         text-align: center;
+         margin-bottom: 30px;
+     }
+ }
+
+ @-webkit-keyframes up-down {
+     0% {
+         transform: translateY(5px);
+     }
+
+     100% {
+         transform: translateY(-5px);
+     }
+ }
+
+ @keyframes up-down {
+     0% {
+         transform: translateY(5px);
+     }
+
+     100% {
+         transform: translateY(-5px);
+     }
+ }
 
 
-  .post-container {
-    position: relative;
+
+ img {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ }
+
+ img :hover {
+     box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.2);
+ }
+
+ * {
+     box-sizing: border-box;
+ }
+
+
+ .header {
+     text-align: center;
+     padding: 32px;
+ }
+
+ * {
+     box-sizing: border-box;
+ }
+
+ /*POSTS CSS*/
+
+ .row {
+     display: -ms-flexbox;
+     /* IE10 */
+     display: flex;
+     -ms-flex-wrap: wrap;
+     /* IE10 */
+     flex-wrap: wrap;
+     padding: 0 4px;
+ }
+
+ /* Create four equal columns that sits next to each other */
+ .column {
+     -ms-flex: 33%;
+     /* IE10 */
+     flex: 33%;
+     max-width: 33%;
+     padding: 0 4px;
+ }
+
+ .column img {
+     margin-top: 8px;
+     vertical-align: middle;
+     width: 100%;
+ }
+
+ /* Responsive layout - makes a two column-layout instead of four columns */
+ @media screen and (max-width: 800px) {
+     .column {
+         -ms-flex: 50%;
+         flex: 50%;
+         max-width: 50%;
+     }
+ }
+
+ /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+ @media screen and (max-width: 600px) {
+     .column {
+         -ms-flex: 100%;
+         flex: 100%;
+         max-width: 100%;
+     }
+ }
+
+
+ .post-container {
+     position: relative;
      padding: 0%;
-  }
- 
-
-.post-hover-banner {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
-  
-  width: 100%;
-   background-color: #070b0f2a;
-}
-
- 
-.post-container:hover .post-hover-banner {
-  opacity: 1;
-  display: inline-block;
-
-}
-.post-container .post-hover-banner  img{
-  margin: 10px;
-  height: 50px;
-  width: 50px;
-}
-.post-container .post-hover-banner button,.post-container .post-hover-banner a{
-  margin-top:15px ;
-  margin-left:2px;
-  margin-right:2px;
-}
-.post-container .post-hover-banner  h5{
-  margin: 19px;
-  color: white;
-  text-align: start;
  }
- .direct-chat-text{
-   margin-left :-10px;
-   margin-right :0px;
-   margin-top :20px;
-   
- }
- #hero .btn{
-   border-radius: 100px;
-   
-   border:solid 2px #eef0f2;
- }
- #activity  .post-container .post-hover-banner  img{
- 
-  height: 50px;
-  width: 50px;
-}
- #activity   .post-container .post-hover-banner button,.post-container .post-hover-banner a{
-  margin-top:15px ;
- 
-  margin-right:2px;
-  margin-left:2px;
-}
- 
-  #activity   .direct-chat-text{
-    visibility :hidden;
-   
- }
-  /*END POSTS CSS*/
 
-  .login-bg   {
-    width: 100%;
-    height: 100vh;
-    background: url("../img/login-bg.jpeg") top right;
-    background-size: cover;
-    position: relative;
-   }
-   .login-bg .py-4 .modal-dialog .modal-content  .modal-header  {
+
+ .post-hover-banner {
+     transition: .5s ease;
+     opacity: 0;
+     position: absolute;
+     bottom: 0%;
+     left: 0%;
+
+     width: 100%;
+     background-color: #070b0f2a;
+ }
+
+
+ .post-container:hover .post-hover-banner {
+     opacity: 1;
+     display: inline-block;
+
+ }
+
+ .post-container .post-hover-banner img {
+     margin: 10px;
+     height: 50px;
+     width: 50px;
+ }
+
+ .post-container .post-hover-banner button,
+ .post-container .post-hover-banner a {
+     margin-top: 15px;
+     margin-left: 2px;
+     margin-right: 2px;
+ }
+
+ .post-container .post-hover-banner h5 {
+     margin: 19px;
+     color: white;
+     text-align: start;
+ }
+
+ .direct-chat-text {
+     margin-left: -10px;
+     margin-right: 0px;
+     margin-top: 20px;
+
+ }
+
+ #hero .btn {
+     border-radius: 100px;
+
+     border: solid 2px #eef0f2;
+ }
+
+ #activity .post-container .post-hover-banner img {
+
+     height: 50px;
+     width: 50px;
+ }
+
+ #activity .post-container .post-hover-banner button,
+ .post-container .post-hover-banner a {
+     margin-top: 15px;
+
+     margin-right: 2px;
+     margin-left: 2px;
+ }
+
+ #activity .direct-chat-text {
+     visibility: hidden;
+
+ }
+
+ /*END POSTS CSS*/
+
+ .login-bg {
+     width: 100%;
+     height: 100vh;
+     background: url("../img/login-bg.jpeg") top right;
+     background-size: cover;
+     position: relative;
+ }
+
+ .login-bg .py-4 .modal-dialog .modal-content .modal-header {
      background-color: #6141ee;
-   }
-   .text-center a,button{ 
-     margin:5px;
+ }
+
+ .text-center a,
+ button {
+     margin: 5px;
      border-radius: 40px;
-  }
-  .login-bg .py-4 .modal-dialog .modal-content  .modal-header span {
+ }
+
+ .login-bg .py-4 .modal-dialog .modal-content .modal-header span {
      color: #ffffff;
      text-align: center;
-     margin :10px;
-  }
-  
+     margin: 10px;
+ }
+
  /*dropdown men*/
- 
 
 
 
 
 
-/* A simple, css only, (some-what) responsive menu */
- 
- 
-a  :hover {
-  text-decoration: none;
-  }
- 
+
+ /* A simple, css only, (some-what) responsive menu */
+
+
+ a :hover {
+     text-decoration: none;
+ }
+
 
  nav {
-  position: relative;
-  background: #2B2B2B;
-  margin-top: 10px;
-   margin-left: 50px;
-   margin-right: 50px;
-  
-  letter-spacing: 1px;
- 
-  border-top: 1px solid #FBC202;
+     position: relative;
+     background: #2B2B2B;
+     margin-top: 10px;
+     margin-left: 50px;
+     margin-right: 50px;
 
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.856);
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-}
-@media screen and (max-width: 767px) {
-  .mobile-space {margin-top:400px;}
-  }
+     letter-spacing: 1px;
+
+     border-top: 1px solid #FBC202;
+
+     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.856);
+     border-bottom-right-radius: 30px;
+     border-bottom-left-radius: 30px;
+ }
+
+ @media screen and (max-width: 767px) {
+     .mobile-space {
+         margin-top: 400px;
+     }
+ }
+
+ /*--------USER PROFILE------------*/
+ .profile-img .user-block .img-circle{
+     width: 100px;
+     height: 100px;
+     margin-bottom: 40px;
+ }
+#hero {
+     width: 100%;
+     height: 100vh;
+     
+     background-size: cover;
+     position: relative;
+ }

@@ -76,8 +76,8 @@
             <div class="tab-content">
               <div class="tab-pane" id="activity">
                 <!-- Post -->
-
-                <post user_id= user.id ></post>
+ 
+                <post user_id= this.user_id></post>
                 <!-- /.post -->
               </div>
 
@@ -189,6 +189,8 @@
 
 <script>
 export default {
+     props: ["user_id" ],
+
   data() {
     return {
       form: new Form({
@@ -203,15 +205,12 @@ export default {
     };
   },
   methods: {
-    newtModal(user) {
- 
- 
-      $("#postModal").modal("show");
-      this.form.fill(user);
-    },
+    
+     
+  
   },
   created() {
-    axios.get("api/profile").then(({ data }) => this.form.fill(data));
+    //axios.get("api/profile").then(({ data }) => this.form.fill(data));
   },
 };
 </script>

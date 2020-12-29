@@ -51,6 +51,8 @@ const router = new VueRouter({
 Vue.component('login-form', require('./components/login/LoginForm.vue').default);
 
 Vue.component('post', require('./components/Post.vue').default);
+Vue.component('profile', require('./components/Profile.vue').default);
+
 Vue.component('image-clicked-modal', require('./components/ImageClickedModal.vue').default);
 Vue.component('create-account-modal', require('./components/CreateAccountModal.vue').default);
 

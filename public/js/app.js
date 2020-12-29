@@ -2402,12 +2402,12 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     if (this.user_id === "0") {
-      axios.get("api/post").then(function (_ref) {
+      axios.get("/api/post").then(function (_ref) {
         var data = _ref.data;
         return _this.posts = data.data;
       });
     } else {
-      axios.get("api/post/user/" + this.user_id).then(function (_ref2) {
+      axios.get("/api/post/user/" + this.user_id).then(function (_ref2) {
         var data = _ref2.data;
         return _this.posts = data.data;
       });
@@ -2616,6 +2616,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["user_id"],
   data: function data() {
     return {
       form: new Form({
@@ -2629,19 +2630,8 @@ __webpack_require__.r(__webpack_exports__);
       })
     };
   },
-  methods: {
-    newtModal: function newtModal(user) {
-      $("#postModal").modal("show");
-      this.form.fill(user);
-    }
-  },
-  created: function created() {
-    var _this = this;
-
-    axios.get("api/profile").then(function (_ref) {
-      var data = _ref.data;
-      return _this.form.fill(data);
-    });
+  methods: {},
+  created: function created() {//axios.get("api/profile").then(({ data }) => this.form.fill(data));
   }
 });
 
@@ -65243,10 +65233,10 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("section", { attrs: { id: "portfolio" } }, [
+      _c("section", { staticStyle: { "background-color": "white" } }, [
         _c(
           "div",
-          { staticClass: "row" },
+          { staticClass: "row ", staticStyle: { "background-color": "white" } },
           _vm._l(_vm.cols, function(i) {
             return _c("div", { key: i, staticClass: "column" }, [
               i === 1
@@ -65261,23 +65251,33 @@ var render = function() {
                         [
                           _c("div", { staticClass: "post-hover-banner" }, [
                             _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-2" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: { href: "/profile/" + post.user.id }
-                                  },
-                                  [
-                                    _c("img", {
-                                      staticClass: "img-circle img-bordered-sm",
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "col-2  ",
+                                  staticStyle: { "margin-bottom": "20px" }
+                                },
+                                [
+                                  _c(
+                                    "a",
+                                    {
                                       attrs: {
-                                        src: post.image,
-                                        alt: "user image"
+                                        href: "/profile/" + post.user.id
                                       }
-                                    })
-                                  ]
-                                )
-                              ]),
+                                    },
+                                    [
+                                      _c("img", {
+                                        staticClass:
+                                          " img-circle img-bordered-sm",
+                                        attrs: {
+                                          src: post.image,
+                                          alt: "user image"
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
                               _vm._v(" "),
                               _c("div", { staticClass: "col-6" }, [
                                 _c("div", { staticClass: "direct-chat-text" }, [
@@ -65576,7 +65576,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container mt-5" }, [
       _c("div", { staticClass: "row justify-content-center" }),
       _vm._v(" "),
-      _c("link", { attrs: { href: "css/style.css", rel: "stylesheet" } })
+      _c("link", { attrs: { href: "/css/style.css", rel: "stylesheet" } })
     ])
   }
 ]
@@ -65614,7 +65614,7 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "tab-pane", attrs: { id: "activity" } },
-                [_c("post", { attrs: { user_id: "user.id" } })],
+                [_c("post", { attrs: { user_id: "this.user_id" } })],
                 1
               ),
               _vm._v(" "),
@@ -81979,6 +81979,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
 });
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('login-form', __webpack_require__(/*! ./components/login/LoginForm.vue */ "./resources/js/components/login/LoginForm.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('post', __webpack_require__(/*! ./components/Post.vue */ "./resources/js/components/Post.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('profile', __webpack_require__(/*! ./components/Profile.vue */ "./resources/js/components/Profile.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('image-clicked-modal', __webpack_require__(/*! ./components/ImageClickedModal.vue */ "./resources/js/components/ImageClickedModal.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('create-account-modal', __webpack_require__(/*! ./components/CreateAccountModal.vue */ "./resources/js/components/CreateAccountModal.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('dashboard', __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue")["default"]);

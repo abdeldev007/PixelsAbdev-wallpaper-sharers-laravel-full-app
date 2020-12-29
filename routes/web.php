@@ -32,3 +32,4 @@ Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'inde
 //Route::get('/{any}', [App\Http\Controllers\HomeController::class, 'index'])->where('any', '.*');
 
 
+Route::get('/profile/{id}',[App\Http\Controllers\ProfilesController::class,'index'])->name('profile');
