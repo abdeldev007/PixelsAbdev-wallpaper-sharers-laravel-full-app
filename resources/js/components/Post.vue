@@ -1,7 +1,7 @@
 <template>
   <div>
-    <section  style="background-color: white ;">
-      <div class="row " style="background-color: white">
+    <section  >
+      <div class="row "  >
         <div v-for="i in cols" :key="i" class="column">
           <div v-if="i === 1">
             <div
@@ -11,7 +11,7 @@
             >
               <div class="post-hover-banner">
                 <div class="row">
-                     <div style="margin-bottom:20px" class="col-2  ">
+                     <div class="col-2  ">
                      <a   :href="'/profile/'+post.user.id">
                         <img 
                       class=" img-circle img-bordered-sm"

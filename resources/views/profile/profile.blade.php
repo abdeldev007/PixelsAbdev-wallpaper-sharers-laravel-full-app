@@ -34,20 +34,20 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 </head>
-<body id="profile" style="background: url({{$cover}}) top right;">
+<body>
      
  <!-- .nav-menu -->
  @include('include.navbar')
- <div id="app"  >
-    <div  style="margin-top: 200px;" class="container">
+ <div id="app"   >
+    <div  style="margin-top: 200px;" class="container  " >
         
 
-        <div class="row">
-            <div  class="profile-img col-md-3">
+        <div class="row ">
+            <div  class="profile-img prof col-md-2"  >
                 <div class="user-block">
                     <img
                       class="img-circle img-bordered-sm"
-                      src="/img/logo.png"
+                      src="/img/profile.png"
                       alt="user image"
                     />
                  
@@ -55,16 +55,31 @@
                   </div>
          
             </div>
-            <div class="col-md-9">
-                <span class="username">
-                    <a > {{Auth::User()->name}} </a>
-                  </span>
-            </div>
+            <div class="col-md-10 "   >
+              <h3  class="profile-text "> {{$user->name}} </a>
+              
+                <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-green">Follow</a>
+              <div class="row">
+                
+                <div class="col-md-3">
+                  <a href="">
+                    <h5><i class="fas fa-like"></i> 23K followers</h5>  
+                  </a>
+              
+                </div>
+                <div class="col-md-3">
+                  <a href="">
+                    <h5>23K Likes</h5>  
+                  </a>
+                </div>
+              </div>
+                
+             </div>
         </div>
     
     </div>
 
-     <post  user_id= {{Auth::User()->id}}></post>
+     <post  user_id= {{$user->id}}></post>
 
 
 </body>

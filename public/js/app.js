@@ -65233,10 +65233,10 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("section", { staticStyle: { "background-color": "white" } }, [
+      _c("section", [
         _c(
           "div",
-          { staticClass: "row ", staticStyle: { "background-color": "white" } },
+          { staticClass: "row " },
           _vm._l(_vm.cols, function(i) {
             return _c("div", { key: i, staticClass: "column" }, [
               i === 1
@@ -65251,33 +65251,24 @@ var render = function() {
                         [
                           _c("div", { staticClass: "post-hover-banner" }, [
                             _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "col-2  ",
-                                  staticStyle: { "margin-bottom": "20px" }
-                                },
-                                [
-                                  _c(
-                                    "a",
-                                    {
+                              _c("div", { staticClass: "col-2  " }, [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: { href: "/profile/" + post.user.id }
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass:
+                                        " img-circle img-bordered-sm",
                                       attrs: {
-                                        href: "/profile/" + post.user.id
+                                        src: post.image,
+                                        alt: "user image"
                                       }
-                                    },
-                                    [
-                                      _c("img", {
-                                        staticClass:
-                                          " img-circle img-bordered-sm",
-                                        attrs: {
-                                          src: post.image,
-                                          alt: "user image"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]
-                              ),
+                                    })
+                                  ]
+                                )
+                              ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "col-6" }, [
                                 _c("div", { staticClass: "direct-chat-text" }, [
