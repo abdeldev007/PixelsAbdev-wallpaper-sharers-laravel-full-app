@@ -49,6 +49,8 @@ const router = new VueRouter({
 })
 
 Vue.component('login-form', require('./components/login/LoginForm.vue').default);
+Vue.component('post-form', require('./components/posts/PostForm.vue').default);
+Vue.component('create-post-modal', require('./components/posts/CreatePostModal.vue').default);
 
 Vue.component('post', require('./components/Post.vue').default);
 Vue.component('profile', require('./components/Profile.vue').default);

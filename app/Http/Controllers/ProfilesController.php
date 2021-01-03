@@ -13,7 +13,7 @@ class ProfilesController extends Controller
         $posts=Post::latest()->where('user_id',$id) ;
         $cover=Post::find(1) ;
 
-        return view('profile.profile',['user'=>$user,
+        return view('profile.index',['user'=>$user,
             'posts'=>$posts , 'cover'=>$cover->image  ]);
     }
     

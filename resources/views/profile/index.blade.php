@@ -32,14 +32,21 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
+<script>
+  function hideNewPostModal(){
+    $("#createPostModal").modal("hide");
+  }
+  function showModal(){
+    $("#createPostModal").modal("show");
+  }
+</script>
 </head>
 <body>
      
  <!-- .nav-menu -->
  @include('include.navbar')
  <div id="app"   >
-    <div  style="margin-top: 200px;" class="container  " >
+    <div  style="margin-top: 100px;" class="container  " >
         
 
         <div class="row ">
@@ -57,16 +64,17 @@
             </div>
             <div class="col-md-10 "   >
               <h3  class="profile-text "> {{$user->name}} </a>
-               @if (Auth::User()->id!=$user->id)
-               <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-green">Follow</a>
+                @if (Auth::User()!=null)
+                @if (Auth::User()->id!=$user->id)
+                <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-green">Follow</a>
+                @else 
+                <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-yellow">Edit</a>
+               <a onClick="showModal()" style="margin-bottom: 15px;" class="btn btn-primary bg-yellow">New Post</a>
 
-               @else
-               <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-yellow">Edit</a>
-               <a @onClick() style="margin-bottom: 15px;" class="btn btn-primary bg-yellow">New Post</a>
- 
-               @endif
-             
-              
+                @endif
+                @else
+                <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-green">Follow</a>
+                @endif             
                 <h6><i class="fas fa-location"></i> Agadir , Morocco <i class="fas fa-hd"></i> reccadev</h6>
                 
              </div>
@@ -93,6 +101,5 @@
     </div>
 
      <post  user_id= {{$user->id}}></post>
-
-
+    @include('../include.post.CreatePostModal')
 </body>

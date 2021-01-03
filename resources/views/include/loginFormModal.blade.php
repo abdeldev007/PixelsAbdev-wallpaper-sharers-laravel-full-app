@@ -6,6 +6,7 @@
           role="dialog"
           aria-hidden="false"
         >
+ 
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -43,10 +44,8 @@
                           <a href="#" class="btn  bg-red  btn-google  "><i class="fas  fa-facebook-squa"></i> Sign up using
                             Google+</a>
                         </div>
-                    
                         <a href="/login" class="text-center">I already have a membership</a>
-                              
-                     
+                                                 
                     </div>
                   </div>
                 </div>

@@ -144,6 +144,7 @@
     </section>  
 <image-clicked-modal :post= " this.post "  :user= " this.user " ></image-clicked-modal>
 
+
  <div class="container mt-5">
       <div class="row justify-content-center">
         <!-- Portfolio Grid
@@ -193,7 +194,7 @@
 
 <script>
  import ImageClickedModal from './ImageClickedModal.vue';
-export default {
+ export default {
   components: { ImageClickedModal },
    props: ["user_id" ],
 

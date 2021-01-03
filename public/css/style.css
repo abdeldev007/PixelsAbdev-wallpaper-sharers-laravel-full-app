@@ -180,8 +180,9 @@
      font-size: 48px;
  }
 
- #hero .btn-scroll:hover {
+ #hero .btn-outline-warning :hover {
      color: #ffb727;
+     background-color: #ff9100;
  }
 
  @media (min-width: 1024px) {
@@ -428,10 +429,7 @@
          margin-top: 400px;
      }
  }
-  .btn-outline-primary   {
-    background-color: #212529;
-    
-}
+ 
  /*--------USER PROFILE------------*/
  .profile-img .user-block .img-circle{
      width: 90px;

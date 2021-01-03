@@ -48,30 +48,30 @@
       @if (Auth::User()!=null)
           <div style="width: 100%" class="row">
         <div class="col-md-2">
-          <a id="nav-links" style="color: rgb(255, 255, 255)  ; width:100% " href="/profile/{{Auth::User()->id}}" class="btn btn-outline-primary   ">PROFILE</a>
+          <a id="nav-links" style="color: rgb(255, 255, 255)  ; width:100% " href="/profile/{{Auth::User()->id}}" class="btn btn-outline-warning   ">PROFILE</a>
 
         </div>
         <div class="col-md-2">
-          <a style="color: rgb(255, 255, 255) ; width:100% " href="/edit/{{Auth::User()->id}}" class="btn btn-outline-primary   ">EDIT</a>
+          <a style="color: rgb(255, 255, 255) ; width:100% " href="/edit/{{Auth::User()->id}}" class="btn btn-outline-warning   ">EDIT</a>
 
         </div>
         <div class="col-md-3">
-          <a style="color: rgb(255, 255, 255)  ; width:100% " href="/register" class="btn btn-outline-primary   ">NEW POST</a>
+          <a onClick="showModal()"  style="color: rgb(255, 255, 255)  ; width:100% " class="btn btn-outline-warning   ">NEW POST</a>
 
         </div>
         <div class="col-md-3">
-          <a style="color: rgb(255, 255, 255)  ; width:100% " href="/register" class="btn btn-outline-primary   ">FOLLOWERS</a>
+          <a style="color: rgb(255, 255, 255)  ; width:100% " href="/register" class="btn btn-outline-warning   ">FOLLOWERS</a>
 
         </div>
        
         <div class="col-md-2">
-          <a style="color: rgb(255, 255, 255)  ; width:100% " href="/register" class="btn btn-outline-primary   ">DEVELOPER</a>
+          <a style="color: rgb(255, 255, 255)  ; width:100% " href="/register" class="btn btn-outline-warning   ">DEVELOPER</a>
 
         </div>
       </div>  
       @else
-      <div class="col-md-3">
-        <a style="color: chocolate  ; width:100% " href="/register" class="btn btn-outline-primary   ">BECOME A SHARER</a>
+      <div class=" col-md-3">
+        <a style="color: chocolate  ; width:100% " href="/register" class="btn-scroll btn btn-outline-warning   ">BECOME A SHARER</a>
 
       </div>
       @endif
@@ -88,7 +88,10 @@
         </main>
     </div>
     <script>
-   
+ 
+function showModal(){
+    $("#createPostModal").modal("show");
+  }
 // When the user scrolls down   
 window.onscroll = function() {scrollFunction()};
 function createAccount(){

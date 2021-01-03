@@ -9,6 +9,9 @@
 <post user_id="0"  ></post>
 
  <create-account-modal></create-account-modal>
+ 
+ <create-post-modal user_id= {{Auth::User()->id}}></create-post-modal>
+
  @endsection
 
 

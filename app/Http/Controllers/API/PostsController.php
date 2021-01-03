@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\Post;
 use Validator;
+use Intervention\Image\Facades\Image;
+
  use Illuminate\Support\Facades\Auth;
 class PostsController extends BaseController
 {
@@ -38,19 +40,36 @@ class PostsController extends BaseController
     {
         
         $input = $request->all();
-   
+        
+     //   dd( $input) ;
+        
         $validator = Validator::make($input, [
             'tags' => 'required',
             'title' => 'required',
-            'image' => 'required'
+            'image' => ['required', 'image'],
+
         ]);
-   
+
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
         }
-   
-        $Post = Post::create($input);
-   
+        // Read file contents...
+        $contents = file_get_contents($request->photo->path());
+    
+        // ...or just move it somewhere else (eg: local `storage` directory or S3)
+         $imagePath = request('image')->store('uploads', 'public');
+
+        $image = Image::make(public_path("storage/{$imagePath}")) ;
+
+        $image->save();
+
+      //  $Post = Post::create($input);
+      auth()->user()->posts()->create([
+        'title' => $data['title'],
+        'tags'=>$data['tags'],
+         'category'=>$data['category'],
+         'image' => $imagePath,
+    ]);
         return $this->sendResponse($Post, 'Post created successfully.');
     } 
    

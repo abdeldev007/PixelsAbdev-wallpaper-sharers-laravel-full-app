@@ -28,6 +28,7 @@ Route::get('/api',  function(){
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+Route::post('/post', [App\Http\Controllers\PostsController::class, 'store'])->name('post');
 
 //Route::get('/{any}', [App\Http\Controllers\HomeController::class, 'index'])->where('any', '.*');
 
