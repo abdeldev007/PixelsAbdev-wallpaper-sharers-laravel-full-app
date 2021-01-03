@@ -1,6 +1,9 @@
 WALLPAPERS SHARERS : LARAVEL/VUE.JS APP 
 (THIS APP IS STILLS ON PROGRESS...)
 <br>
+
+Profile UI
+<img src="https://raw.githubusercontent.com/abdeldev007/PixelsAbdev-wallpaper-sharers-laravel-full-app/master/screenshots/profile.PNG"/>
 Change the register page 
  <img src="https://raw.githubusercontent.com/abdeldev007/PixelsAbdev-wallpaper-sharers-laravel-full-app/master/screenshots/register-last.PNG"/>
 
