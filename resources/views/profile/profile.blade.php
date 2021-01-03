@@ -60,10 +60,13 @@
                @if (Auth::User()->id!=$user->id)
                <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-green">Follow</a>
 
-             
-                   
+               @else
+               <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-yellow">Edit</a>
+               <a @onClick() style="margin-bottom: 15px;" class="btn btn-primary bg-yellow">New Post</a>
+ 
                @endif
-                  
+             
+              
                 <h6><i class="fas fa-location"></i> Agadir , Morocco <i class="fas fa-hd"></i> reccadev</h6>
                 
              </div>

@@ -17,7 +17,7 @@ class PostsController extends BaseController
      */
     public function userPosts($id)
     {        
-       return  $this->sendResponse(Post::with('user')->get() , 'Posts retrieved successfully.');
+       return  $this->sendResponse(Post::latest()->with('user')->get()->where('user_id',$id), 'Posts retrieved successfully.');
     }
     /**
      * Display a listing of the resource.
@@ -26,7 +26,7 @@ class PostsController extends BaseController
      */
     public function index()
     {
-       return  $this->sendResponse( Post::with('user')->get() , 'Posts retrieved successfully.');
+       return  $this->sendResponse( Post::latest()->with('user')->get() , 'Posts retrieved successfully.');
     }
     /**
      * Store a newly created resource in storage.
