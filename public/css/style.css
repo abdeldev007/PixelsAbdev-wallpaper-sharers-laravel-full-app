@@ -428,7 +428,10 @@
          margin-top: 400px;
      }
  }
-
+  .btn-outline-primary   {
+    background-color: #212529;
+    
+}
  /*--------USER PROFILE------------*/
  .profile-img .user-block .img-circle{
      width: 90px;

@@ -57,24 +57,34 @@
             </div>
             <div class="col-md-10 "   >
               <h3  class="profile-text "> {{$user->name}} </a>
-              
-                <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-green">Follow</a>
-              <div class="row">
-                
-                <div class="col-md-3">
-                  <a href="">
-                    <h5><i class="fas fa-like"></i> 23K followers</h5>  
-                  </a>
-              
-                </div>
-                <div class="col-md-3">
-                  <a href="">
-                    <h5>23K Likes</h5>  
-                  </a>
-                </div>
-              </div>
+               @if (Auth::User()->id!=$user->id)
+               <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-green">Follow</a>
+
+             
+                   
+               @endif
+                  
+                <h6><i class="fas fa-location"></i> Agadir , Morocco <i class="fas fa-hd"></i> reccadev</h6>
                 
              </div>
+             <div class="container">
+              <ul style="margin-top: 30px" class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">{{count($user->posts)}} Photos</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: grey" class="nav-link " href="#">2 Followers</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: grey" class="nav-link " href="#">2 Following</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: grey" class="nav-link " href="#">2 likes</a>
+                </li>
+                
+              </ul>
+             </div>
+             
         </div>
     
     </div>

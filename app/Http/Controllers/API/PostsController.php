@@ -6,14 +6,18 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\Post;
 use Validator;
-use App\Http\Resources\Post as PostResource;
-use Illuminate\Support\Facades\Auth;
+ use Illuminate\Support\Facades\Auth;
 class PostsController extends BaseController
 {
-
+/**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function userPosts($id)
     {        
-       return  $this->sendResponse(PostResource::collection(Post::with('user')->get()->where('user_id',$id)), 'Posts retrieved successfully.');
+       return  $this->sendResponse(Post::with('user')->get() , 'Posts retrieved successfully.');
     }
     /**
      * Display a listing of the resource.
@@ -22,9 +26,7 @@ class PostsController extends BaseController
      */
     public function index()
     {
-         
-       
-       return  $this->sendResponse(PostResource::collection(Post::with('user')->get()), 'Posts retrieved successfully.');
+       return  $this->sendResponse( Post::with('user')->get() , 'Posts retrieved successfully.');
     }
     /**
      * Store a newly created resource in storage.
@@ -49,7 +51,7 @@ class PostsController extends BaseController
    
         $Post = Post::create($input);
    
-        return $this->sendResponse(new PostResource($Post), 'Post created successfully.');
+        return $this->sendResponse($Post, 'Post created successfully.');
     } 
    
     /**
@@ -66,7 +68,7 @@ class PostsController extends BaseController
             return $this->sendError('Post not found.');
         }
    
-        return $this->sendResponse(new PostResource($Post), 'Post retrieved successfully.');
+        return $this->sendResponse( $Post , 'Post retrieved successfully.');
     }
     
     /**

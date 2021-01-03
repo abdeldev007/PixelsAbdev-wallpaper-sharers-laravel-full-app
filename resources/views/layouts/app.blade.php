@@ -48,7 +48,7 @@
       @if (Auth::User()!=null)
           <div style="width: 100%" class="row">
         <div class="col-md-2">
-          <a style="color: rgb(255, 255, 255)  ; width:100% " href="/profile/{{Auth::User()->id}}" class="btn btn-outline-primary   ">PROFILE</a>
+          <a id="nav-links" style="color: rgb(255, 255, 255)  ; width:100% " href="/profile/{{Auth::User()->id}}" class="btn btn-outline-primary   ">PROFILE</a>
 
         </div>
         <div class="col-md-2">

@@ -2,6 +2,7 @@
   <div>
     <section  >
       <div class="row "  >
+   
         <div v-for="i in cols" :key="i" class="column">
           <div v-if="i === 1">
             <div

@@ -6,7 +6,7 @@
       Lorem ipsum dolor sit amet consectetur.
     </h3>
   </div>
-<post user_id="0"></post>
+<post user_id="0"  ></post>
 
  <create-account-modal></create-account-modal>
  @endsection
