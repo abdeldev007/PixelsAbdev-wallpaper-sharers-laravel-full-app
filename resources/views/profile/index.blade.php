@@ -21,7 +21,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <!-- Scripts -->
+ 
     <script src="{{ asset('/js/app.js') }}" defer></script>
  
  
@@ -66,31 +66,32 @@
               <h3  class="profile-text "> {{$user->name}} </a>
                 @if (Auth::User()!=null)
                 @if (Auth::User()->id!=$user->id)
-                <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-green">Follow</a>
+                <a href="/" style="margin-bottom: 15px; " class="btn btn-success   ">Follow</a>
                 @else 
-                <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-yellow">Edit</a>
-               <a onClick="showModal()" style="margin-bottom: 15px;" class="btn btn-primary bg-yellow">New Post</a>
+                <a href="/" style="margin-bottom: 15px; background-color:#212529;" class="btn btn-primary  "><i style="color: white" class="fas fa-edit"></i></a>
+               <a onClick="showModal()" style="margin-bottom: 15px; background-color:#212529;" class="btn btn-primary  "><i style="color: white"  class="fas fa-camera"></i></a>
 
                 @endif
                 @else
-                <a href="/" style="margin-bottom: 15px;" class="btn btn-primary bg-green">Follow</a>
-                @endif             
-                <h6><i class="fas fa-location"></i> Agadir , Morocco <i class="fas fa-hd"></i> reccadev</h6>
+                <a href="/" style="margin-bottom: 15px; " class="btn btn-success  ">Follow</a>
+                @endif  
+                <h6><i  style="color: grey" class="fas fa-user"></i> {{$user->about}}</h6>           
+                <h6><i style="color: grey" class="fas  fa-location-arrow"></i> Agadir , Morocco <i  style="color: chocolate" class="fas fa-facebook"></i> reccadev</h6>
                 
              </div>
              <div class="container">
               <ul style="margin-top: 30px" class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">{{count($user->posts)}} Photos</a>
+                  <a class="nav-link active" href="#"><i class="fas fa-camera"></i> {{count($user->posts)}} Photos</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: grey" class="nav-link " href="#">2 Followers</a>
+                  <a style="color: grey" class="nav-link " href="#"><i class="fas fa-users"></i> 2 Followers</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: grey" class="nav-link " href="#">2 Following</a>
+                  <a style="color: grey" class="nav-link " href="#"><i class="fas fa-users"></i> 2 Following</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: grey" class="nav-link " href="#">2 likes</a>
+                  <a style="color: grey" class="nav-link " href="#"><i class="fas  fa-thumbs-up"></i> 2 likes</a>
                 </li>
                 
               </ul>

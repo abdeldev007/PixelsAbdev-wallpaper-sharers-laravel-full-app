@@ -7,6 +7,7 @@
                 <div class="form-group  m-3 row">
  
                     <input id="title" type="text"
+                        placeholder="Title"
                         class="col-12 form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title"
                         value="{{ old('title') }}" autocomplete="title" autofocus>
 
@@ -19,7 +20,8 @@
 
                 <div class="form-group  m-3 row">
  
-                    <input id="tags" type="text" class="col-12 form-control{{ $errors->has('tags') ? ' is-invalid' : '' }}"
+                    <input id="tags"
+                           placeholder="Tags :example  fashion,art,christmas..." type="text" class="col-12 form-control{{ $errors->has('tags') ? ' is-invalid' : '' }}"
                         name="tags" value="{{ old('tags') }}" autocomplete="tags" autofocus>
 
                     @if ($errors->has('tags'))
